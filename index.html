@@ -167,8 +167,7 @@ h2 em{font-style:italic;color:var(--gold)}
 .artist-photo{height:285px;background:var(--off);overflow:hidden}
 .artist-photo img{width:100%;height:100%;object-fit:cover}
 .artist-photo.contain img{object-fit:contain;background:#f4f1eb}
-.artist-photo.top img{object-position:center top}
-.artist-photo.center img{object-position:center center}
+.artist-photo.top img{object-position:center}
 .visual-gallery{background:#fff}
 .visual-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:240px;gap:1rem}
 .visual-card{position:relative;border-radius:8px;overflow:hidden;background:var(--off);min-height:0}
@@ -217,6 +216,315 @@ footer img{width:220px;margin:0 auto 1.4rem;background:white;border-radius:6px;p
 footer a{color:var(--gold);text-decoration:none}
 .copy-small{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1.5rem}
 
+.sobre-wrap{
+  max-width:1120px;margin:0 auto;
+  padding:6rem 2rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  align-items:stretch;
+}
+.sobre-left{
+  padding-right:4rem;
+  border-right:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.sobre-right{
+  padding-left:4rem;
+  display:flex;flex-direction:column;gap:1.4rem;
+}
+.sobre-left p{color:var(--muted);font-size:1rem;line-height:1.78;margin-bottom:1rem}
+.sobre-left p:last-of-type{margin-bottom:0}
+.sobre-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);
+  border-radius:8px;overflow:hidden;
+  background:white;
+}
+.sobre-stat{
+  padding:1.4rem 1rem;text-align:center;
+  border-right:1px solid var(--line);
+}
+.sobre-stat:last-child{border-right:none}
+.sobre-stat strong{
+  display:block;font-family:'Playfair Display',serif;
+  color:var(--navy);font-size:2.4rem;line-height:1;font-weight:900;
+}
+.sobre-stat span{
+  font-size:.7rem;color:var(--muted);
+  letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+  margin-top:.35rem;display:block;
+}
+.sobre-image{
+  border-radius:8px;overflow:hidden;
+  box-shadow:0 24px 64px rgba(18,56,93,.16);
+  flex-shrink:0;
+  aspect-ratio:4/3;
+}
+.sobre-image img{width:100%;height:100%;object-fit:cover}
+.sobre-quote{
+  background:var(--navy);color:white;
+  border-radius:8px;padding:1.8rem 2rem;
+  position:relative;overflow:hidden;
+}
+.sobre-quote::before{
+  content:"\201C";
+  font-family:'Playfair Display',serif;
+  font-size:10rem;line-height:1;
+  color:rgba(255,255,255,.07);
+  position:absolute;top:-1.5rem;left:1rem;
+  pointer-events:none;
+}
+.sobre-quote p{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.25rem;line-height:1.5;
+  color:white;position:relative;z-index:1;
+  margin-bottom:.75rem;
+}
+.sobre-quote cite{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--gold);font-style:normal;
+  display:block;position:relative;z-index:1;
+}
+.sobre-venue{
+  background:var(--off);border:1px solid var(--line);
+  border-left:4px solid var(--green);
+  border-radius:8px;padding:1.2rem 1.4rem;
+}
+.sobre-venue .section-label{margin-bottom:.4rem}
+.sobre-venue p{color:var(--ink);font-size:.92rem;line-height:1.6}
+.sobre-venue strong{color:var(--navy)}
+
+@media(max-width:860px){
+  .sobre-wrap{grid-template-columns:1fr;gap:0}
+  .sobre-left{padding-right:0;border-right:none;border-bottom:1px solid var(--line);padding-bottom:3rem;margin-bottom:0}
+  .sobre-right{padding-left:0;padding-top:3rem}
+  .sobre-stats{grid-template-columns:repeat(2,1fr)}
+  .sobre-stat:nth-child(2){border-right:none}
+  .sobre-stat:nth-child(1),
+  .sobre-stat:nth-child(2){border-bottom:1px solid var(--line)}
+}
+
+/* visual-gallery — redesign */
+.visual-gallery{background:var(--off)}
+.visual-grid{
+  display:grid;
+  grid-template-columns:1.45fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:1rem;
+  align-items:start;
+}
+.visual-card{
+  position:relative;
+  border-radius:8px;overflow:hidden;
+  background:var(--ink);
+}
+.visual-card.large{
+  grid-row:span 2;
+  display:flex;flex-direction:column;
+}
+.visual-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  vertical-align:bottom;
+}
+.visual-card.large img{
+  flex:1;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  min-height:0;
+}
+.visual-card span{
+  display:block;
+  background:rgba(18,56,93,.82);
+  color:white;
+  font-weight:900;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:.55rem .85rem;
+  text-shadow:none;
+}
+.visual-card::after{display:none}
+
+@media(max-width:860px){
+  .visual-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+  }
+  .visual-card.large{grid-row:span 1;grid-column:span 2}
+}
+
+.manifesto{background:var(--cream);overflow:hidden}
+.manifesto-wrap{
+  max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:560px;
+}
+.manifesto-visual{
+  position:relative;overflow:hidden;
+}
+.manifesto-visual img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+  filter:saturate(.9) brightness(.88);
+}
+.manifesto-visual::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(18,56,93,0) 55%,var(--navy) 100%),
+             linear-gradient(0deg,rgba(18,56,93,.55) 0%,transparent 40%);
+}
+.manifesto-copy{
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:5rem 4rem 5rem 3.5rem;
+  gap:2.8rem;
+}
+.manifesto-headline{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:clamp(1.5rem,3vw,2.55rem);
+  line-height:1.18;
+  color:white;
+  font-weight:700;
+}
+.manifesto-headline em{
+  font-style:normal;
+  color:var(--gold);
+  display:block;
+  font-size:.72em;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;
+  font-weight:900;
+  margin-bottom:.5rem;
+}
+.manifesto-divider{
+  width:40px;height:3px;
+  background:var(--gold);border-radius:4px;
+}
+.manifesto-quote{
+  border-left:3px solid var(--green);
+  padding-left:1.4rem;
+}
+.manifesto-quote p{
+  font-size:1.05rem;
+  line-height:1.72;
+  color:rgba(255,255,255,.82);
+  font-style:italic;
+}
+.manifesto-quote p strong{color:white;font-style:normal}
+.manifesto-tags{
+  display:flex;flex-wrap:wrap;gap:.6rem;
+  margin-top:.2rem;
+}
+.manifesto-tag{
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  padding:.38rem .85rem;
+  font-size:.72rem;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:800;
+  color:rgba(255,255,255,.62);
+}
+.manifesto-tag.green{
+  background:var(--green);border-color:var(--green);
+  color:white;
+}
+
+@media(max-width:860px){
+  .manifesto-wrap{grid-template-columns:1fr}
+  .manifesto-visual{min-height:55vw}
+  .manifesto-visual::after{
+    background:linear-gradient(0deg,var(--navy) 0%,rgba(18,56,93,0) 35%);
+  }
+  .manifesto-copy{padding:3rem 1.35rem}
+}
+
+.manifesto{background:var(--cream);overflow:hidden}
+.manifesto-headline{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:clamp(1.5rem,3vw,2.55rem);
+  line-height:1.18;
+  color:var(--navy);
+  font-weight:700;
+}
+.manifesto-headline em{
+  font-style:normal;
+  color:var(--green);
+  display:block;
+  font-size:.72em;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;
+  font-weight:900;
+  margin-bottom:.5rem;
+}
+.manifesto-quote p{
+  font-size:1.05rem;
+  line-height:1.72;
+  color:var(--muted);
+  font-style:italic;
+}
+.manifesto-quote p strong{color:var(--navy);font-style:normal}
+.manifesto-tag{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:.38rem .85rem;
+  font-size:.72rem;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:800;
+  color:var(--muted);
+}
+.manifesto-tag.green{
+  background:var(--green);border-color:var(--green);
+  color:white;
+}
+.manifesto-quote{
+  border-left:3px solid var(--green);
+  padding-left:1.4rem;
+}
+.manifesto-visual img{
+  filter:saturate(.9) brightness(.95);
+}
+.manifesto-visual::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(251,248,243,0) 55%,var(--cream) 100%),
+             linear-gradient(0deg,rgba(251,248,243,.45) 0%,transparent 40%);
+}
+
+.artist-bio-short{font-size:.88rem;color:var(--muted)}
+.artist-bio-full{
+  font-size:.85rem;color:var(--muted);line-height:1.7;
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease, padding .3s ease;
+  padding-top:0;
+}
+.artist-bio-full.open{max-height:600px;padding-top:.75rem}
+.artist-toggle{
+  display:inline-flex;align-items:center;gap:.4rem;
+  margin-top:.85rem;cursor:pointer;
+  font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:900;color:var(--navy);background:none;border:none;
+  padding:0;font-family:inherit;
+}
+.artist-toggle:hover{color:var(--green)}
+.artist-toggle .arr{
+  display:inline-block;transition:transform .3s;font-style:normal;
+}
+.artist-toggle.open .arr{transform:rotate(180deg)}
+.artist-tag{
+  display:inline-block;
+  background:var(--off);border:1px solid var(--line);
+  border-radius:999px;padding:.2rem .65rem;
+  font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:800;color:var(--muted);margin:.2rem .15rem 0 0;
+}
+.artist-tags{margin-top:.65rem}
+
 @media(max-width:860px){
   nav{height:64px}.nav-links{display:none}.nav-logo img{height:42px}
   .hero{grid-template-columns:1fr;padding-top:64px}.hero-copy{padding:3rem 1.35rem}.hero-media{min-height:55vw}
@@ -264,41 +572,38 @@ dance (sapateado americano)</p>
 </header>
 
 <section id="sobre">
-  <div class="wrap intro-grid">
-    <div class="copy">
+  <div class="sobre-wrap">
+
+    <div class="sobre-left">
       <p class="section-label">Festival</p>
       <h2>Chega esse ano a sua <em>24ª edição</em></h2>
       <div class="divider"></div>
-      <p>O Brasil International Tap Festival chega à sua 24ª edição com uma programação diversificada,
-oferecendo espetáculos, tap jam, desfile, bate papo e workshops de sapateado americano, house
-aplicado ao improviso do tap dancer, percussão da bateria de escola de samba com os pés, teatro
-musical e muito mais, para os níveis: iniciantes, intermediários e profissionais, com artistas brasileiros
-e internacionais. Além disso, o evento se destaca pela inclusão, oferecendo uma parte da programação
-100% gratuita como bate papo, tap jam e programações. Serão garantidas vagas para pessoas de
-diferentes origens, incluindo pretos, pardos, indígenas e alunos de escolas públicas. O festival conta
-com medidas de acessibilidade, promovendo um ambiente mais inclusivo e acessível. Na 240 edição
-conta com convidados nacionais e internacionais e uma intensa programação, para o publico em geral.
-Bolsas de estudos para festivais, bem como programas nacionais e internacionais serão contempladas
-para os participantes!
-Uma das grandes atrações do evento, é o sapateador Dewitt Fleming Jr, de Nova York, que
-recentemente fez o musical da Broadway de grande sucesso "A Wonderful World".</p>
-      <div class="facts">
-        <div class="fact"><strong>24ª</strong><span>Edição</span></div>
-        <div class="fact"><strong>6</strong><span>Professores</span></div>
-        <div class="fact"><strong>5</strong><span>Dias</span></div>
-        <div class="fact"><strong>3</strong><span>Níveis</span></div>
+      <p>O Brasil International Tap Festival chega à sua 24ª edição com uma programação diversificada, oferecendo espetáculos, tap jam, desfile, bate papo e workshops de sapateado americano, house aplicado ao improviso do tap dancer, percussão da bateria de escola de samba com os pés, teatro musical e muito mais — para iniciantes, intermediários e profissionais, com artistas brasileiros e internacionais.</p>
+      <p>O evento se destaca pela inclusão, com parte da programação 100% gratuita e vagas garantidas para pessoas de diferentes origens, incluindo pretos, pardos, indígenas e alunos de escolas públicas, com medidas de acessibilidade que promovem um ambiente mais inclusivo.</p>
+      <p>Uma das grandes atrações é o sapateador <strong style="color:var(--navy)">Dewitt Fleming Jr.</strong>, de Nova York, que recentemente estrelou o musical da Broadway "A Wonderful World".</p>
+
+      <div class="sobre-stats">
+        <div class="sobre-stat"><strong>24ª</strong><span>Edição</span></div>
+        <div class="sobre-stat"><strong>6</strong><span>Professores</span></div>
+        <div class="sobre-stat"><strong>5</strong><span>Dias</span></div>
+        <div class="sobre-stat"><strong>3</strong><span>Níveis</span></div>
       </div>
-      <div class="quote-box">
+    </div>
+
+    <div class="sobre-right">
+      <div class="sobre-image">
+        <img src="assets/dewitt-stage.jpg" alt="Dewitt Fleming Jr. em cena">
+      </div>
+      <div class="sobre-quote">
         <p>"É música para se ver e dança para se ouvir."</p>
+        <cite>Brasil International Tap Festival</cite>
+      </div>
+      <div class="sobre-venue">
+        <p class="section-label">Local dos workshops</p>
+        <p><strong>Só Dança</strong><br>Rua Augusta, 2614 — Cerqueira César<br>São Paulo, SP</p>
       </div>
     </div>
-    <div>
-      <div class="image-frame"><img src="assets/dewitt-stage.jpg" alt="Sapatos de sapateado em cena"></div>
-      <div class="venue-card">
-        <p class="section-label" style="margin-bottom:.35rem">Local dos workshops</p>
-        <p><strong>Só Dança</strong><br>Rua Augusta, 2614<br>Cerqueira César - São Paulo, SP</p>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -341,12 +646,6 @@ recentemente fez o musical da Broadway de grande sucesso "A Wonderful World".</p
     </div>
   </div>
 </section>
-<!-- ══════════════════════════════════════════ -->
-
-<section class="band">
-  <img src="assets/jim-chris-performance.jpg" alt="Apresentação com música e tap dance">
-  <div class="band-text"><p>Tap dance é um misto de movimento, produção de som e cena.</p></div>
-</section>
 
 <section class="scholarship">
   <div class="wrap">
@@ -357,24 +656,37 @@ recentemente fez o musical da Broadway de grande sucesso "A Wonderful World".</p
   </div>
 </section>
 
-<section class="mission">
-  <div class="wrap">
-    <p>"Queremos difundir o sapateado como entretenimento, envolvendo artistas, formadores de opinião e pessoas que nunca tiveram a oportunidade de ver essa arte."</p>
-    <small>O público · Escolas de dança · Projetos sociais · Admiradores</small>
-  </div>
-</section>
+<section class="manifesto">
+  <div class="manifesto-wrap">
 
-<section class="visual-gallery">
-  <div class="wrap">
-    <p class="section-label">Imagens</p>
-    <h2>Cenas do <em>festival</em></h2>
-    <div class="divider"></div>
-    <div class="visual-grid">
-      <figure class="visual-card large"><img src="assets/hero-dewitt-paulista.jpg" alt="Dewitt Fleming Jr. em apresentação ao ar livre"><span>Tap na rua</span></figure>
-      <figure class="visual-card"><img src="assets/dancer-stage.jpg" alt="Artista em cena de sapateado"><span>Palco</span></figure>
-      <figure class="visual-card"><img src="assets/tap-shoe-close.jpg" alt="Sapato de sapateado em movimento"><span>Movimento</span></figure>
-      <figure class="visual-card"><img src="assets/thiago-carnaval.png" alt="Thiago Stallo em contexto de escola de samba"><span>Samba</span></figure>
-      <figure class="visual-card contain"><img src="assets/tap-shoes-black.png" alt="Sapatos de sapateado em cena"><span>Som dos pés</span></figure>
+    <div class="manifesto-visual">
+      <img src="assets/dancer-stage.jpg" alt="Tap dancer em movimento">
+    </div>
+
+    <div class="manifesto-copy">
+
+      <div>
+        <p class="manifesto-headline">
+          <em>Tap dance é</em>
+          É música para se ver<br>e dança para se ouvir.
+        </p>
+        <div class="manifesto-divider" style="margin-top:1.4rem"></div>
+      </div>
+
+      <div class="manifesto-quote">
+        <p>"Queremos difundir o sapateado como entretenimento, envolvendo <strong>artistas</strong>, <strong>formadores de opinião</strong> e pessoas que nunca tiveram a oportunidade de ver essa arte."</p>
+      </div>
+
+      <div>
+        <p style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:rgba(255,255,255,.42);margin-bottom:.75rem">Para quem é</p>
+        <div class="manifesto-tags">
+          <span class="manifesto-tag green">O público</span>
+          <span class="manifesto-tag">Escolas de dança</span>
+          <span class="manifesto-tag">Projetos sociais</span>
+          <span class="manifesto-tag">Admiradores</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -422,87 +734,135 @@ recentemente fez o musical da Broadway de grande sucesso "A Wonderful World".</p
     <h2>Convidados <em>2026</em></h2>
     <div class="divider"></div>
     <div class="artists-grid">
+
       <article class="artist">
         <div class="artist-photo contain top"><img src="assets/chris-matallo.png" alt="Chris Matallo"></div>
-        <div class="artist-body"><p class="origin">Brasil · Realizadora</p><h3>Chris Matallo</h3><p>Chamada de "Carmen Miranda do tap dance" pelo The New York Times. Sapateadora, coreógrafa e musicista, é diretora artística e organizadora do festival desde 1999.</p></div>
+        <div class="artist-body">
+          <p class="origin">Brasil · Realizadora</p>
+          <h3>Chris Matallo</h3>
+          <div class="artist-tags">
+            <span class="artist-tag">Sapateadora</span>
+            <span class="artist-tag">Coreógrafa</span>
+            <span class="artist-tag">Musicista</span>
+          </div>
+          <p class="artist-bio-short" style="margin-top:.65rem">A única artista no mundo que sapateia e toca sax tenor simultaneamente. Chamada de "Carmen Miranda do tap dance" pelo The New York Times.</p>
+          <div class="artist-bio-full" id="bio-chris">
+            <p>Diretora artística e organizadora do Brasil International Tap Festival desde 1999. Formada em Dança pela Unicamp (1993) e mestra em Artes da Cena pela Célia Centro de Artes e Educação.</p>
+            <p style="margin-top:.6rem">Atuou no elenco de <em>New York, New York — O Musical</em> (2011–2013), foi preparadora de tap em <em>Crazy for You</em> com Claudia Raia e Jarbas Homem de Mello, e coreografou <em>Singing in the Rain</em> em São Paulo, ganhando prêmio de melhor coreografia em 2017.</p>
+            <p style="margin-top:.6rem">Em 2016 foi homenageada pela UCTT (Universidade de Arte) na Filadélfia como um dos maiores nomes do sapateado no mundo. Desenvolve desde 2018 o núcleo artístico <strong>B.r.U.s</strong> ao lado de Jim Hamilton, com turnês pelo Brasil, Américas e Europa.</p>
+          </div>
+          <button class="artist-toggle" onclick="toggleBio('bio-chris',this)">
+            Ler mais <em class="arr">↓</em>
+          </button>
+        </div>
       </article>
+
       <article class="artist">
         <div class="artist-photo center"><img src="assets/dewitt-stage.jpg" alt="Dewitt Fleming Jr."></div>
-        <div class="artist-body"><p class="origin">Nova York · EUA</p><h3>Dewitt Fleming Jr.</h3><p>Artista e coreógrafo da Broadway, indicado ao Chita Rivera Awards, destaque de A Wonderful World e reconhecido por sua variedade rítmica e presença cênica.</p></div>
+        <div class="artist-body">
+          <p class="origin">Nova York · EUA</p>
+          <h3>Dewitt Fleming Jr.</h3>
+          <div class="artist-tags">
+            <span class="artist-tag">Broadway</span>
+            <span class="artist-tag">Coreógrafo</span>
+            <span class="artist-tag">Chita Rivera Awards</span>
+          </div>
+          <p class="artist-bio-short" style="margin-top:.65rem">Artista e coreógrafo de renome mundial da Broadway. Indicado duas vezes ao Chita Rivera Awards. Estrelou e coreografou o tap de <em>A Wonderful World</em>.</p>
+          <div class="artist-bio-full" id="bio-dewitt">
+            <p>Fez turnês pelo mundo com Riverdance e Cirque Du Soleil, e dançou como solista com Alicia Keys, Wynton Marsalis e Bobby McFerrin. Participou de <em>Boardwalk Empire</em> (Emmy), <em>America's Got Talent</em> e do documentário <em>Steps of Freedom</em>.</p>
+            <p style="margin-top:.6rem">Recebeu o prêmio Dançarino da Década da Broadway World, o prêmio Hoofer da American Tap Dance Foundation e o NYC Flo Bert. Lecionou na NYU, Pace University, Steps on Broadway e Broadway Dance Center.</p>
+            <p style="margin-top:.6rem">Fez história gravando o primeiro álbum de jazz ao vivo com sapateado no Jazz at Lincoln Center Dizzy's Club. O New York Times afirma que ele é uma fonte contínua de variedade rítmica — "faíscas parecem sair daqueles sapatos".</p>
+          </div>
+          <button class="artist-toggle" onclick="toggleBio('bio-dewitt',this)">
+            Ler mais <em class="arr">↓</em>
+          </button>
+        </div>
       </article>
+
       <article class="artist">
-        <div class="artist-photo top"><img src="assets/edson-guiu.png" alt="Edson Guiu"></div>
-        <div class="artist-body"><p class="origin">Brasil</p><h3>Edson Guiu</h3><p>Coreógrafo, bailarino e DJ, referência em Hip Hop e House Dance na América Latina, com atuação internacional e formação em centros como Broadway Dance Center.</p></div>
+        <div class="artist-photo top"><img src="assets/edson-guiu.png" alt="Edson Guiu" ></div>
+        <div class="artist-body" >
+          <p class="origin">Brasil</p>
+          <h3>Edson Guiu</h3>
+          <div class="artist-tags">
+            <span class="artist-tag">Hip Hop</span>
+            <span class="artist-tag">House Dance</span>
+            <span class="artist-tag">DJ G</span>
+          </div>
+          <p class="artist-bio-short" style="margin-top:.65rem">Um dos maiores precursores do Hip Hop e House Dance na América Latina. Mais de 30 anos de carreira em mais de 10 países.</p>
+          <div class="artist-bio-full" id="bio-edson">
+            <p>Coreógrafo, bailarino e DJ brasileiro, no mercado da dança desde 1997. Sob o nome artístico DJ G, atua como produtor musical e DJ em clubes e eventos em Nova York, Paris e Los Angeles.</p>
+            <p style="margin-top:.6rem">Possui formação em instituições de renome mundial, incluindo o Broadway Dance Center em Nova York e o IALS em Roma. Desenvolveu metodologias próprias de ensino e oferece formação profissional e mentoria para dançarinos e empreendedores da área.</p>
+          </div>
+          <button class="artist-toggle" onclick="toggleBio('bio-edson',this)">
+            Ler mais <em class="arr">↓</em>
+          </button>
+        </div>
       </article>
+
       <article class="artist">
         <div class="artist-photo top"><img src="assets/thiago-stallo.png" alt="Thiago Stallo"></div>
-        <div class="artist-body"><p class="origin">Brasil</p><h3>Thiago Stallo</h3><p>Musicista, percussionista e diretor de bateria/cuícas da Nenê da Vila Matilde. Ministrará bateria de escola de samba com os pés aplicada ao tap dance.</p></div>
+        <div class="artist-body">
+          <p class="origin">Brasil</p>
+          <h3>Thiago Stallo</h3>
+          <div class="artist-tags">
+            <span class="artist-tag">Percussão</span>
+            <span class="artist-tag">Escola de Samba</span>
+            <span class="artist-tag">Nenê da Vila Matilde</span>
+          </div>
+          <p class="artist-bio-short" style="margin-top:.65rem">Musicista, percussionista e diretor da bateria/cuícas da Agremiação Nenê da Vila Matilde. Atuante no carnaval desde 1998.</p>
+          <div class="artist-bio-full" id="bio-thiago">
+            <p>Ritmista e músico desde 2011, com forte atuação no universo das baterias das escolas de samba. Diretor da ala de cuíca, destaca-se pela dedicação ao ritmo e pelo compromisso com a tradição do samba. Também atua como arranjador, contribuindo para o desenvolvimento musical e a construção de levadas que fortalecem a identidade sonora das baterias.</p>
+            <p style="margin-top:.6rem">Atualmente desenvolve um projeto com Chris Matallo e Jim Hamilton no Conservatório e Faculdade Souza Lima em SP, onde une percussão de escola de samba e tap dance em uma linguagem única.</p>
+          </div>
+          <button class="artist-toggle" onclick="toggleBio('bio-thiago',this)">
+            Ler mais <em class="arr">↓</em>
+          </button>
+        </div>
       </article>
+
       <article class="artist">
         <div class="artist-photo top"><img src="assets/luisa-bresser.jpg" alt="Luisa Bresser"></div>
-        <div class="artist-body"><p class="origin">Brasil</p><h3>Luisa Bresser</h3><p>Multiartista, atriz, cantora, tap dancer e influenciadora. Atuou em Poliana Moça e em produções como Escola do Rock, Wicked, Shrek e Charlie e a Fantástica Fábrica de Chocolate.</p></div>
+        <div class="artist-body">
+          <p class="origin">Brasil</p>
+          <h3>Luisa Bresser</h3>
+          <div class="artist-tags">
+            <span class="artist-tag">Teatro Musical</span>
+            <span class="artist-tag">Atriz</span>
+            <span class="artist-tag">Cantora</span>
+          </div>
+          <p class="artist-bio-short" style="margin-top:.65rem">Multiartista, atriz, cantora, tap dancer e influenciadora. Ganhou projeção nacional como Helena Rogatto em <em>Poliana Moça</em> (SBT).</p>
+          <div class="artist-bio-full" id="bio-luisa">
+            <p>Destaque em grandes produções como <em>Escola do Rock</em>, <em>Charlie e a Fantástica Fábrica de Chocolate</em>, <em>Wicked</em> (Nessarose Thropp) e <em>Shrek — O Musical</em>. Formada na AMDA (American Musical and Dramatic Academy) em Nova York, onde recebeu o conselho que define sua trajetória: "Nunca sinta medo de experimentar".</p>
+            <p style="margin-top:.6rem">Atualmente cursa Cinema na FAAP e foi convidada para o Globo de Ouro. Utiliza suas redes sociais para desmistificar o mercado artístico e incentivar novas gerações de artistas.</p>
+          </div>
+          <button class="artist-toggle" onclick="toggleBio('bio-luisa',this)">
+            Ler mais <em class="arr">↓</em>
+          </button>
+        </div>
       </article>
+
       <article class="artist">
         <div class="artist-photo"><img src="assets/jim-chris-performance.jpg" alt="Jim Hamilton em performance"></div>
-        <div class="artist-body"><p class="origin">Filadélfia · EUA</p><h3>Jim Hamilton</h3><p>Percussionista e artista performático que pesquisa som, corpo e cultura brasileira. Desenvolve com Chris Matallo o núcleo artístico B.r.U.s.</p></div>
+        <div class="artist-body">
+          <p class="origin">Filadélfia · EUA</p>
+          <h3>Jim Hamilton</h3>
+          <div class="artist-tags">
+            <span class="artist-tag">Percussão</span>
+            <span class="artist-tag">B.r.U.s</span>
+            <span class="artist-tag">Performance</span>
+          </div>
+          <p class="artist-bio-short" style="margin-top:.65rem">Percussionista e artista performático nascido na Filadélfia, atualmente no Brasil. Pesquisa som, corpo e cultura brasileira ao lado de Chris Matallo no núcleo B.r.U.s.</p>
+          <div class="artist-bio-full" id="bio-jim">
+            <p>Cresceu em um estúdio de dança na Filadélfia com pais professores de tap. Aos 12 anos iniciou na bateria e percussão. Fundou a gravadora Tension Rod e em 2014 criou o Rittenhouse Recording Studio. Tocou no Montreal Jazz Festival (2002) e no Grammy Awards com Boyz II Men (1992–1997).</p>
+            <p style="margin-top:.6rem">Em 2024 se apresentou no Festival de Dança de Joinville, Festival de Ponta Grossa, Festival Internacional de Goiás e na 4ª Residência da São Paulo Escola de Dança com o espetáculo "Escuta-me". Desde setembro de 2024 ministra aulas no Conservatório Musical Souza Lima ao lado de Chris Matallo.</p>
+          </div>
+          <button class="artist-toggle" onclick="toggleBio('bio-jim',this)">
+            Ler mais <em class="arr">↓</em>
+          </button>
+        </div>
       </article>
-    </div>
-  </div>
-</section>
 
-<section id="inscricoes" class="pricing">
-  <div class="wrap">
-    <p class="section-label">Inscrições</p>
-    <h2>Workshops e <em>valores</em></h2>
-    <div class="divider"></div>
-    <p class="pricing-note">Programações de 17 a 20 de setembro, com opções para 4 dias ou 2 dias. Valores promocionais válidos até 30 de junho; a partir de 1º de julho, os valores serão alterados.</p>
-    <div class="pricing-grid">
-      <article class="price-card">
-        <p class="level">Programação</p>
-        <h3>Básica e Infantil</h3>
-        <ul>
-          <li>Tap e diversão</li>
-          <li>House aplicado ao tap dance</li>
-          <li>Teatro musical aplicado ao tap dancer</li>
-          <li>Bateria de escola de samba com os pés</li>
-        </ul>
-        <div class="price-box"><small>4 dias</small><p class="amount">R$500 <span>à vista</span></p><p class="install">ou 3 parcelas de R$200</p></div>
-        <div class="price-box two"><small>2 dias</small><p class="amount">R$300 <span>à vista</span></p><p class="install">ou 3 parcelas de R$150</p></div>
-      </article>
-      <article class="price-card featured">
-        <span class="popular">Mais procurado</span>
-        <p class="level">Programação</p>
-        <h3>Intermediária</h3>
-        <ul>
-          <li>House aplicado ao tap dance</li>
-          <li>Técnica e grooves</li>
-          <li>Teatro musical aplicado ao tap dancer</li>
-          <li>Agilidade e limpeza de sons</li>
-          <li>Bateria de escola de samba com os pés</li>
-        </ul>
-        <div class="price-box"><small>4 dias</small><p class="amount">R$800 <span>à vista</span></p><p class="install">ou 3 parcelas de R$300</p></div>
-        <div class="price-box two"><small>2 dias</small><p class="amount">R$500 <span>à vista</span></p><p class="install">ou 3 parcelas de R$200</p></div>
-      </article>
-      <article class="price-card">
-        <p class="level">Programação</p>
-        <h3>Avançada</h3>
-        <ul>
-          <li>House aplicado ao tap dance</li>
-          <li>Técnica, corpo e produção de som</li>
-          <li>Teatro musical aplicado ao tap dancer</li>
-          <li>Técnica com Dewitt Fleming Jr.</li>
-          <li>Bateria de escola de samba com os pés</li>
-        </ul>
-        <div class="price-box"><small>4 dias</small><p class="amount">R$900 <span>à vista</span></p><p class="install">ou 3 parcelas de R$335</p></div>
-        <div class="price-box two"><small>2 dias</small><p class="amount">R$500 <span>à vista</span></p><p class="install">ou 3 parcelas de R$200</p></div>
-      </article>
-    </div>
-    <div class="deadline">Pagamentos via PIX. Envie a ficha de inscrição e o comprovante para o e-mail do festival.</div>
-    <div class="payment">
-      <h3>Ficha de inscrição para workshops</h3>
-      <p>PIX</p>
-      <div class="pix">11931516933</div>
-      <p>E-mail: <a href="mailto:contatochrismatallo@gmail.com">contatochrismatallo@gmail.com</a></p>
     </div>
   </div>
 </section>
@@ -602,6 +962,16 @@ function showDay(id, btn){
   document.querySelectorAll('.tab-btn').forEach(tab => tab.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+}
+
+function toggleBio(id, btn) {
+  const bio = document.getElementById(id);
+  const isOpen = bio.classList.contains('open');
+  bio.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.innerHTML = !isOpen
+    ? 'Ler menos <em class="arr" style="display:inline-block;transform:rotate(180deg)">↓</em>'
+    : 'Ler mais <em class="arr">↓</em>';
 }
 </script>
 </body>
