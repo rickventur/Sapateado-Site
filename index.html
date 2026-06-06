@@ -84,6 +84,45 @@ h2 em{font-style:italic;color:var(--gold)}
 .venue-card{margin-top:1.3rem;background:white;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:1.25rem}
 .venue-card strong{color:var(--navy)}
 
+/* ── NEW SECTION: artistas ── */
+.artistas-section{background:var(--off)}
+.artistas-lead{max-width:880px}
+.artistas-lead p{color:var(--muted);font-size:1.05rem;line-height:1.75;margin-bottom:1.1rem}
+.artistas-lead p:last-child{margin-bottom:0}
+.artistas-highlight{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.8rem;
+}
+.artistas-highlight-card{
+  background:white;border:1px solid var(--line);border-radius:8px;
+  padding:1.5rem 1.5rem 1.5rem 1.8rem;
+  border-left:4px solid var(--gold);
+  display:flex;flex-direction:column;gap:.35rem;
+}
+.artistas-highlight-card.green-border{border-left-color:var(--green)}
+.artistas-highlight-card strong{
+  font-family:'Playfair Display',serif;font-size:1.18rem;color:var(--navy);display:block;
+}
+.artistas-highlight-card p{color:var(--muted);font-size:.88rem;margin:0}
+.artistas-full-text{
+  margin-top:2.8rem;
+  background:var(--navy);border-radius:8px;padding:2.4rem 2.6rem;
+  position:relative;overflow:hidden;
+}
+.artistas-full-text::before{
+  content:"\201C";
+  font-family:'Playfair Display',serif;
+  font-size:14rem;line-height:1;color:rgba(255,255,255,.06);
+  position:absolute;top:-2rem;left:1.2rem;pointer-events:none;
+}
+.artistas-full-text p{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.6;
+  color:rgba(255,255,255,.92);position:relative;z-index:1;
+}
+.artistas-full-text p strong{
+  font-style:normal;color:var(--gold);font-weight:700;
+}
+
 .band{position:relative;height:310px;overflow:hidden;background:var(--navy)}
 .band img{width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.95)}
 .band::after{content:"";position:absolute;inset:0;background:rgba(18,56,93,.58)}
@@ -185,6 +224,8 @@ footer a{color:var(--gold);text-decoration:none}
   .intro-grid{grid-template-columns:1fr;gap:2rem}.wrap{padding:4rem 1.35rem}
   .facts{grid-template-columns:repeat(2,1fr)}.item{grid-template-columns:1fr;gap:.2rem}
   .visual-grid{grid-template-columns:1fr;grid-auto-rows:260px}.visual-card.large{grid-row:span 1}
+  .artistas-highlight{grid-template-columns:1fr}
+  .artistas-full-text{padding:1.8rem 1.5rem}
 }
 </style>
 </head>
@@ -240,7 +281,7 @@ conta com convidados nacionais e internacionais e uma intensa programação, par
 Bolsas de estudos para festivais, bem como programas nacionais e internacionais serão contempladas
 para os participantes!
 Uma das grandes atrações do evento, é o sapateador Dewitt Fleming Jr, de Nova York, que
-recentemente fez o musical da Broadway de grande sucesso “A Wonderful World”.</p>
+recentemente fez o musical da Broadway de grande sucesso "A Wonderful World".</p>
       <div class="facts">
         <div class="fact"><strong>24ª</strong><span>Edição</span></div>
         <div class="fact"><strong>6</strong><span>Professores</span></div>
@@ -260,6 +301,47 @@ recentemente fez o musical da Broadway de grande sucesso “A Wonderful World”
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════════════════════════
+     NOVA SEÇÃO: OS ARTISTAS
+══════════════════════════════════════════ -->
+<section class="artistas-section">
+  <div class="wrap">
+    <p class="section-label">Os artistas</p>
+    <h2>Uma edição de <em>encontros</em> e transformações</h2>
+    <div class="divider"></div>
+
+    <div class="artistas-lead">
+      <p>O festival conta com a presença de <strong style="color:var(--navy)">Jim Hamilton</strong>, da Filadélfia, atualmente morando no Brasil, que desenvolve um trabalho de tap dance pela lente da percussão ao lado da realizadora do festival.</p>
+      <p>Artistas como <strong style="color:var(--navy)">Luisa Bresser</strong>, <strong style="color:var(--navy)">Edson Guiu</strong> e <strong style="color:var(--navy)">Thiago Stallo</strong> trarão um grande diálogo e possibilidades de transformação para cada indivíduo que participará do festival.</p>
+      <p>Todos os convidados ministrarão workshops, além de se apresentar em espetáculos e shows ao lado da única artista no mundo que toca sax tenor, piano e sapateia simultaneamente, <strong style="color:var(--navy)">Chris Matallo</strong> — aclamada de "Carmen Miranda do tap dance" pelo The New York Times, uma das responsáveis por popularizar essa arte no Brasil.</p>
+    </div>
+
+    <div class="artistas-highlight">
+      <div class="artistas-highlight-card">
+        <strong>Jim Hamilton · Filadélfia</strong>
+        <p>Percussão, corpo e cultura brasileira — desenvolvendo o núcleo artístico B.r.U.s ao lado de Chris Matallo.</p>
+      </div>
+      <div class="artistas-highlight-card green-border">
+        <strong>Chris Matallo · Realizadora</strong>
+        <p>Única no mundo a tocar sax tenor, piano e sapateado simultaneamente. Carmen Miranda do tap dance, segundo o The New York Times.</p>
+      </div>
+      <div class="artistas-highlight-card green-border">
+        <strong>Luisa Bresser · Edson Guiu · Thiago Stallo</strong>
+        <p>Teatro musical, House Dance e percussão de escola de samba em diálogo com o tap dance.</p>
+      </div>
+      <div class="artistas-highlight-card">
+        <strong>Dewitt Fleming Jr. · Nova York</strong>
+        <p>Artista da Broadway, indicado ao Chita Rivera Awards. Destaque de A Wonderful World — direto de Nova York para São Paulo.</p>
+      </div>
+    </div>
+
+    <div class="artistas-full-text">
+      <p>Tap dance (sapateado americano) é uma linguagem multidisciplinar de movimento e som — <strong>dança e música</strong> simultaneamente. Alegre, que libera o puro prazer de seus praticantes e admiradores. É uma arte para todos, sem limite de idade ou condicionamento físico, sendo extremamente <strong>democrática e transformadora</strong> para quem faz e para quem assiste.</p>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════ -->
 
 <section class="band">
   <img src="assets/jim-chris-performance.jpg" alt="Apresentação com música e tap dance">
