@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brasil International Tap Festival 2026 - São Paulo</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('V5o4nkvA-SU-TDJvS');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -24,9 +27,6 @@ html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
-
-
-
 nav{
   position:fixed;top:0;left:0;width:100%;height:70px;z-index:20;
   display:flex;align-items:center;justify-content:space-between;gap:2rem;
@@ -37,7 +37,6 @@ nav{
 .nav-links{display:flex;gap:1.8rem;list-style:none}
 .nav-links a{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--muted);font-weight:700}
 .nav-links a:hover{color:var(--navy)}
-
 .hero{
   min-height:100vh;padding-top:70px;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.9fr);
   background:linear-gradient(135deg,var(--cream) 0%,#f7f0e6 52%,#e8f3ef 100%);
@@ -49,10 +48,7 @@ nav{
   font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800;
 }
 .hero-logo{width:min(520px,100%);margin:.3rem 0}
-.hero h1{
-  font-family:'Playfair Display',serif;color:var(--navy);
-  font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;max-width:760px;
-}
+.hero h1{font-family:'Playfair Display',serif;color:var(--navy);font-size:clamp(2.4rem,5vw,4.8rem);line-height:.98;max-width:760px;}
 .hero h1 em{color:var(--green);font-style:italic}
 .hero-text{font-size:1.06rem;color:var(--muted);max-width:680px}
 .hero-pills{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.3rem}
@@ -66,13 +62,11 @@ nav{
 .hero-media{position:relative;min-height:520px;overflow:hidden}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 0%,rgba(251,248,243,0) 32%)}
-
 .wrap{max-width:1120px;margin:0 auto;padding:5.5rem 2rem}
 .section-label{color:var(--green);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:900;margin-bottom:.8rem}
 h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.12;color:var(--navy);margin-bottom:1rem}
 h2 em{font-style:italic;color:var(--gold)}
 .divider{width:52px;height:4px;background:var(--gold);border-radius:4px;margin-bottom:2.4rem}
-
 .intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:start}
 .copy p{color:var(--muted);margin-bottom:1.05rem}
 .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
@@ -85,46 +79,19 @@ h2 em{font-style:italic;color:var(--gold)}
 .image-frame img{width:100%;height:100%;object-fit:cover}
 .venue-card{margin-top:1.3rem;background:white;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:1.25rem}
 .venue-card strong{color:var(--navy)}
-
-/* ── NEW SECTION: artistas ── */
 .artistas-section{background:var(--off)}
 .artistas-lead{max-width:880px}
 .artistas-lead p{color:var(--muted);font-size:1.05rem;line-height:1.75;margin-bottom:1.1rem}
 .artistas-lead p:last-child{margin-bottom:0}
-.artistas-highlight{
-  display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.8rem;
-}
-.artistas-highlight-card{
-  background:white;border:1px solid var(--line);border-radius:8px;
-  padding:1.5rem 1.5rem 1.5rem 1.8rem;
-  border-left:4px solid var(--gold);
-  display:flex;flex-direction:column;gap:.35rem;
-}
+.artistas-highlight{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.8rem;}
+.artistas-highlight-card{background:white;border:1px solid var(--line);border-radius:8px;padding:1.5rem 1.5rem 1.5rem 1.8rem;border-left:4px solid var(--gold);display:flex;flex-direction:column;gap:.35rem;}
 .artistas-highlight-card.green-border{border-left-color:var(--green)}
-.artistas-highlight-card strong{
-  font-family:'Playfair Display',serif;font-size:1.18rem;color:var(--navy);display:block;
-}
+.artistas-highlight-card strong{font-family:'Playfair Display',serif;font-size:1.18rem;color:var(--navy);display:block;}
 .artistas-highlight-card p{color:var(--muted);font-size:.88rem;margin:0}
-.artistas-full-text{
-  margin-top:2.8rem;
-  background:var(--navy);border-radius:8px;padding:2.4rem 2.6rem;
-  position:relative;overflow:hidden;
-}
-.artistas-full-text::before{
-  content:"\201C";
-  font-family:'Playfair Display',serif;
-  font-size:14rem;line-height:1;color:rgba(255,255,255,.06);
-  position:absolute;top:-2rem;left:1.2rem;pointer-events:none;
-}
-.artistas-full-text p{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.6;
-  color:rgba(255,255,255,.92);position:relative;z-index:1;
-}
-.artistas-full-text p strong{
-  font-style:normal;color:var(--gold);font-weight:700;
-}
-
+.artistas-full-text{margin-top:2.8rem;background:var(--navy);border-radius:8px;padding:2.4rem 2.6rem;position:relative;overflow:hidden;}
+.artistas-full-text::before{content:"\201C";font-family:'Playfair Display',serif;font-size:14rem;line-height:1;color:rgba(255,255,255,.06);position:absolute;top:-2rem;left:1.2rem;pointer-events:none;}
+.artistas-full-text p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.6;color:rgba(255,255,255,.92);position:relative;z-index:1;}
+.artistas-full-text p strong{font-style:normal;color:var(--gold);font-weight:700;}
 .band{position:relative;height:310px;overflow:hidden;background:var(--navy)}
 .band img{width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:saturate(.95)}
 .band::after{content:"";position:absolute;inset:0;background:rgba(18,56,93,.58)}
@@ -138,7 +105,6 @@ h2 em{font-style:italic;color:var(--gold)}
 .mission{background:var(--green);color:white;text-align:center}
 .mission p{font-family:'Playfair Display',serif;font-size:clamp(1.35rem,3vw,2.35rem);line-height:1.35;max-width:980px;margin:0 auto;font-style:italic}
 .mission small{display:block;margin-top:1rem;text-transform:uppercase;letter-spacing:.18em;font-weight:900;color:rgba(255,255,255,.72)}
-
 .schedule{background:var(--navy);color:white}
 .schedule .section-label{color:var(--gold)}
 .schedule h2{color:white}
@@ -163,7 +129,6 @@ h2 em{font-style:italic;color:var(--gold)}
 .event-card small{color:var(--gold);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900}
 .event-card h3{font-family:'Playfair Display',serif;font-size:1.35rem;margin:.35rem 0;color:white}
 .event-card p{font-size:.85rem;color:rgba(255,255,255,.62)}
-
 .artists-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:1.5rem}
 .artist{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .artist-photo{height:285px;background:var(--off);overflow:hidden}
@@ -182,7 +147,6 @@ h2 em{font-style:italic;color:var(--gold)}
 .origin{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:900;margin-bottom:.25rem}
 .artist h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.45rem;margin-bottom:.6rem}
 .artist p{font-size:.88rem;color:var(--muted)}
-
 .pricing{background:var(--off)}
 .pricing-note{color:var(--muted);font-style:italic;margin-bottom:2rem;max-width:780px}
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.35rem}
@@ -205,422 +169,136 @@ h2 em{font-style:italic;color:var(--gold)}
 .payment h3{font-family:'Playfair Display',serif;font-size:1.55rem;margin-bottom:.5rem}
 .pix{display:inline-block;margin:1rem 0;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);border-radius:8px;padding:.75rem 1.4rem;color:var(--gold);font-family:monospace;font-size:1.1rem}
 .payment a{color:var(--gold);text-decoration:none}
-
 .services-grid,.partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
 .service,.partner{background:white;border:1px solid var(--line);border-radius:8px;padding:1.6rem}
 .service h3,.partner h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.55rem;margin-bottom:.55rem}
 .service p,.partner p{color:var(--muted);font-size:.92rem}
 .partner strong{display:block;font-family:'Playfair Display',serif;color:var(--navy);font-size:2.1rem;margin-top:.5rem}
 .sponsor-logo{max-width:280px;margin:2rem auto 0;background:white;border-radius:8px;padding:1.2rem;border:1px solid var(--line)}
-
 footer{background:var(--navy);color:rgba(255,255,255,.62);text-align:center;padding:3.5rem 2rem}
 footer img{width:220px;margin:0 auto 1.4rem;background:white;border-radius:6px;padding:.4rem}
 footer a{color:var(--gold);text-decoration:none}
 .copy-small{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1.5rem}
-
-.sobre-wrap{
-  max-width:1120px;margin:0 auto;
-  padding:6rem 2rem;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0;
-  align-items:stretch;
-}
-.sobre-left{
-  padding-right:4rem;
-  border-right:1px solid var(--line);
-  display:flex;flex-direction:column;justify-content:center;
-}
-.sobre-right{
-  padding-left:4rem;
-  display:flex;flex-direction:column;gap:1.4rem;
-}
+.sobre-wrap{max-width:1120px;margin:0 auto;padding:6rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;}
+.sobre-left{padding-right:4rem;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;}
+.sobre-right{padding-left:4rem;display:flex;flex-direction:column;gap:1.4rem;}
 .sobre-left p{color:var(--muted);font-size:1rem;line-height:1.78;margin-bottom:1rem}
 .sobre-left p:last-of-type{margin-bottom:0}
-.sobre-stats{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--line);
-  border-radius:8px;overflow:hidden;
-  background:white;
-}
-.sobre-stat{
-  padding:1.4rem 1rem;text-align:center;
-  border-right:1px solid var(--line);
-}
+.sobre-stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden;background:white;}
+.sobre-stat{padding:1.4rem 1rem;text-align:center;border-right:1px solid var(--line);}
 .sobre-stat:last-child{border-right:none}
-.sobre-stat strong{
-  display:block;font-family:'Playfair Display',serif;
-  color:var(--navy);font-size:2.4rem;line-height:1;font-weight:900;
-}
-.sobre-stat span{
-  font-size:.7rem;color:var(--muted);
-  letter-spacing:.1em;text-transform:uppercase;font-weight:700;
-  margin-top:.35rem;display:block;
-}
-.sobre-image{
-  border-radius:8px;overflow:hidden;
-  box-shadow:0 24px 64px rgba(18,56,93,.16);
-  flex-shrink:0;
-  aspect-ratio:4/3;
-}
+.sobre-stat strong{display:block;font-family:'Playfair Display',serif;color:var(--navy);font-size:2.4rem;line-height:1;font-weight:900;}
+.sobre-stat span{font-size:.7rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-top:.35rem;display:block;}
+.sobre-image{border-radius:8px;overflow:hidden;box-shadow:0 24px 64px rgba(18,56,93,.16);flex-shrink:0;aspect-ratio:4/3;}
 .sobre-image img{width:100%;height:100%;object-fit:cover}
-.sobre-quote{
-  background:var(--navy);color:white;
-  border-radius:8px;padding:1.8rem 2rem;
-  position:relative;overflow:hidden;
-}
-.sobre-quote::before{
-  content:"\201C";
-  font-family:'Playfair Display',serif;
-  font-size:10rem;line-height:1;
-  color:rgba(255,255,255,.07);
-  position:absolute;top:-1.5rem;left:1rem;
-  pointer-events:none;
-}
-.sobre-quote p{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:1.25rem;line-height:1.5;
-  color:white;position:relative;z-index:1;
-  margin-bottom:.75rem;
-}
-.sobre-quote cite{
-  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-  font-weight:800;color:var(--gold);font-style:normal;
-  display:block;position:relative;z-index:1;
-}
-.sobre-venue{
-  background:var(--off);border:1px solid var(--line);
-  border-left:4px solid var(--green);
-  border-radius:8px;padding:1.2rem 1.4rem;
-}
+.sobre-quote{background:var(--navy);color:white;border-radius:8px;padding:1.8rem 2rem;position:relative;overflow:hidden;}
+.sobre-quote::before{content:"\201C";font-family:'Playfair Display',serif;font-size:10rem;line-height:1;color:rgba(255,255,255,.07);position:absolute;top:-1.5rem;left:1rem;pointer-events:none;}
+.sobre-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.25rem;line-height:1.5;color:white;position:relative;z-index:1;margin-bottom:.75rem;}
+.sobre-quote cite{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--gold);font-style:normal;display:block;position:relative;z-index:1;}
+.sobre-venue{background:var(--off);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:1.2rem 1.4rem;}
 .sobre-venue .section-label{margin-bottom:.4rem}
 .sobre-venue p{color:var(--ink);font-size:.92rem;line-height:1.6}
 .sobre-venue strong{color:var(--navy)}
-
 @media(max-width:860px){
   .sobre-wrap{grid-template-columns:1fr;gap:0}
   .sobre-left{padding-right:0;border-right:none;border-bottom:1px solid var(--line);padding-bottom:3rem;margin-bottom:0}
   .sobre-right{padding-left:0;padding-top:3rem}
   .sobre-stats{grid-template-columns:repeat(2,1fr)}
   .sobre-stat:nth-child(2){border-right:none}
-  .sobre-stat:nth-child(1),
-  .sobre-stat:nth-child(2){border-bottom:1px solid var(--line)}
+  .sobre-stat:nth-child(1),.sobre-stat:nth-child(2){border-bottom:1px solid var(--line)}
 }
-
-/* visual-gallery — redesign */
 .visual-gallery{background:var(--off)}
-.visual-grid{
-  display:grid;
-  grid-template-columns:1.45fr 1fr 1fr;
-  grid-template-rows:auto auto;
-  gap:1rem;
-  align-items:start;
-}
-.visual-card{
-  position:relative;
-  border-radius:8px;overflow:hidden;
-  background:var(--ink);
-}
-.visual-card.large{
-  grid-row:span 2;
-  display:flex;flex-direction:column;
-}
-.visual-card img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  vertical-align:bottom;
-}
-.visual-card.large img{
-  flex:1;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
-  min-height:0;
-}
-.visual-card span{
-  display:block;
-  background:rgba(18,56,93,.82);
-  color:white;
-  font-weight:900;
-  font-size:.72rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  padding:.55rem .85rem;
-  text-shadow:none;
-}
+.visual-grid{display:grid;grid-template-columns:1.45fr 1fr 1fr;grid-template-rows:auto auto;gap:1rem;align-items:start;}
+.visual-card{position:relative;border-radius:8px;overflow:hidden;background:var(--ink);}
+.visual-card.large{grid-row:span 2;display:flex;flex-direction:column;}
+.visual-card img{width:100%;height:auto;display:block;object-fit:contain;vertical-align:bottom;}
+.visual-card.large img{flex:1;height:100%;object-fit:cover;object-position:center top;min-height:0;}
+.visual-card span{display:block;background:rgba(18,56,93,.82);color:white;font-weight:900;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.55rem .85rem;text-shadow:none;}
 .visual-card::after{display:none}
-
 @media(max-width:860px){
-  .visual-grid{
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:auto;
-  }
+  .visual-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
   .visual-card.large{grid-row:span 1;grid-column:span 2}
 }
-
 .manifesto{background:var(--cream);overflow:hidden}
-.manifesto-wrap{
-  max-width:1120px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;
-  min-height:560px;
-}
-.manifesto-visual{
-  position:relative;overflow:hidden;
-}
-.manifesto-visual img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:center top;
-  display:block;
-  filter:saturate(.9) brightness(.88);
-}
-.manifesto-visual::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(18,56,93,0) 55%,var(--navy) 100%),
-             linear-gradient(0deg,rgba(18,56,93,.55) 0%,transparent 40%);
-}
-.manifesto-copy{
-  display:flex;flex-direction:column;
-  justify-content:center;
-  padding:5rem 4rem 5rem 3.5rem;
-  gap:2.8rem;
-}
-.manifesto-headline{
-  font-family:'Playfair Display',serif;
-  font-style:italic;
-  font-size:clamp(1.5rem,3vw,2.55rem);
-  line-height:1.18;
-  color:white;
-  font-weight:700;
-}
-.manifesto-headline em{
-  font-style:normal;
-  color:var(--gold);
-  display:block;
-  font-size:.72em;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  font-family:'DM Sans',sans-serif;
-  font-weight:900;
-  margin-bottom:.5rem;
-}
-.manifesto-divider{
-  width:40px;height:3px;
-  background:var(--gold);border-radius:4px;
-}
-.manifesto-quote{
-  border-left:3px solid var(--green);
-  padding-left:1.4rem;
-}
-.manifesto-quote p{
-  font-size:1.05rem;
-  line-height:1.72;
-  color:rgba(255,255,255,.82);
-  font-style:italic;
-}
-.manifesto-quote p strong{color:white;font-style:normal}
-.manifesto-tags{
-  display:flex;flex-wrap:wrap;gap:.6rem;
-  margin-top:.2rem;
-}
-.manifesto-tag{
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:999px;
-  padding:.38rem .85rem;
-  font-size:.72rem;letter-spacing:.12em;
-  text-transform:uppercase;font-weight:800;
-  color:rgba(255,255,255,.62);
-}
-.manifesto-tag.green{
-  background:var(--green);border-color:var(--green);
-  color:white;
-}
-
+.manifesto-wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
+.manifesto-visual{position:relative;overflow:hidden;}
+.manifesto-visual img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:saturate(.9) brightness(.95);}
+.manifesto-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,248,243,0) 55%,var(--cream) 100%),linear-gradient(0deg,rgba(251,248,243,.45) 0%,transparent 40%);}
+.manifesto-copy{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 3.5rem;gap:2.8rem;}
+.manifesto-headline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.5rem,3vw,2.55rem);line-height:1.18;color:var(--navy);font-weight:700;}
+.manifesto-headline em{font-style:normal;color:var(--green);display:block;font-size:.72em;letter-spacing:.08em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:900;margin-bottom:.5rem;}
+.manifesto-divider{width:40px;height:3px;background:var(--gold);border-radius:4px;}
+.manifesto-quote{border-left:3px solid var(--green);padding-left:1.4rem;}
+.manifesto-quote p{font-size:1.05rem;line-height:1.72;color:var(--muted);font-style:italic;}
+.manifesto-quote p strong{color:var(--navy);font-style:normal}
+.manifesto-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem;}
+.manifesto-tag{border:1px solid var(--line);border-radius:999px;padding:.38rem .85rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--muted);}
+.manifesto-tag.green{background:var(--green);border-color:var(--green);color:white;}
 @media(max-width:860px){
   .manifesto-wrap{grid-template-columns:1fr}
   .manifesto-visual{min-height:55vw}
-  .manifesto-visual::after{
-    background:linear-gradient(0deg,var(--navy) 0%,rgba(18,56,93,0) 35%);
-  }
+  .manifesto-visual::after{background:linear-gradient(0deg,var(--cream) 0%,rgba(251,248,243,0) 35%);}
   .manifesto-copy{padding:3rem 1.35rem}
 }
-
-.manifesto{background:var(--cream);overflow:hidden}
-.manifesto-headline{
-  font-family:'Playfair Display',serif;
-  font-style:italic;
-  font-size:clamp(1.5rem,3vw,2.55rem);
-  line-height:1.18;
-  color:var(--navy);
-  font-weight:700;
-}
-.manifesto-headline em{
-  font-style:normal;
-  color:var(--green);
-  display:block;
-  font-size:.72em;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  font-family:'DM Sans',sans-serif;
-  font-weight:900;
-  margin-bottom:.5rem;
-}
-.manifesto-quote p{
-  font-size:1.05rem;
-  line-height:1.72;
-  color:var(--muted);
-  font-style:italic;
-}
-.manifesto-quote p strong{color:var(--navy);font-style:normal}
-.manifesto-tag{
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:.38rem .85rem;
-  font-size:.72rem;letter-spacing:.12em;
-  text-transform:uppercase;font-weight:800;
-  color:var(--muted);
-}
-.manifesto-tag.green{
-  background:var(--green);border-color:var(--green);
-  color:white;
-}
-.manifesto-quote{
-  border-left:3px solid var(--green);
-  padding-left:1.4rem;
-}
-.manifesto-visual img{
-  filter:saturate(.9) brightness(.95);
-}
-.manifesto-visual::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(251,248,243,0) 55%,var(--cream) 100%),
-             linear-gradient(0deg,rgba(251,248,243,.45) 0%,transparent 40%);
-}
-
 .artist-bio-short{font-size:.88rem;color:var(--muted)}
-.artist-bio-full{
-  font-size:.85rem;color:var(--muted);line-height:1.7;
-  max-height:0;overflow:hidden;
-  transition:max-height .4s ease, padding .3s ease;
-  padding-top:0;
-}
+.artist-bio-full{font-size:.85rem;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .4s ease, padding .3s ease;padding-top:0;}
 .artist-bio-full.open{max-height:600px;padding-top:.75rem}
-.artist-toggle{
-  display:inline-flex;align-items:center;gap:.4rem;
-  margin-top:.85rem;cursor:pointer;
-  font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
-  font-weight:900;color:var(--navy);background:none;border:none;
-  padding:0;font-family:inherit;
-}
+.artist-toggle{display:inline-flex;align-items:center;gap:.4rem;margin-top:.85rem;cursor:pointer;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:var(--navy);background:none;border:none;padding:0;font-family:inherit;}
 .artist-toggle:hover{color:var(--green)}
-.artist-toggle .arr{
-  display:inline-block;transition:transform .3s;font-style:normal;
-}
+.artist-toggle .arr{display:inline-block;transition:transform .3s;font-style:normal;}
 .artist-toggle.open .arr{transform:rotate(180deg)}
-.artist-tag{
-  display:inline-block;
-  background:var(--off);border:1px solid var(--line);
-  border-radius:999px;padding:.2rem .65rem;
-  font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
-  font-weight:800;color:var(--muted);margin:.2rem .15rem 0 0;
-}
+.artist-tag{display:inline-block;background:var(--off);border:1px solid var(--line);border-radius:999px;padding:.2rem .65rem;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--muted);margin:.2rem .15rem 0 0;}
 .artist-tags{margin-top:.65rem}
-
 /* Modal */
-.modal-overlay{
-  display:none;position:fixed;inset:0;z-index:100;
-  background:rgba(18,56,93,.55);backdrop-filter:blur(6px);
-  align-items:center;justify-content:center;padding:1.5rem;
-}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(18,56,93,.55);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1.5rem;}
 .modal-overlay.open{display:flex}
-.modal{
-  background:var(--cream);border-radius:12px;
-  width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
-  box-shadow:0 32px 80px rgba(18,56,93,.28);
-}
-.modal-header{
-  background:var(--navy);padding:1.8rem 2rem;border-radius:12px 12px 0 0;
-  position:sticky;top:0;z-index:1;
-}
+.modal{background:var(--cream);border-radius:12px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(18,56,93,.28);}
+.modal-header{background:var(--navy);padding:1.8rem 2rem;border-radius:12px 12px 0 0;position:sticky;top:0;z-index:1;}
 .modal-header p{color:var(--gold);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:900;margin-bottom:.3rem}
 .modal-header h3{font-family:'Playfair Display',serif;color:white;font-size:1.55rem;margin:0}
 .modal-body{padding:2rem}
-.modal-close{
-  position:absolute;top:1.2rem;right:1.4rem;
-  background:rgba(255,255,255,.12);border:none;color:white;
-  width:32px;height:32px;border-radius:50%;font-size:1.1rem;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-family:inherit;
-}
+.modal-close{position:absolute;top:1.2rem;right:1.4rem;background:rgba(255,255,255,.12);border:none;color:white;width:32px;height:32px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;}
 .modal-close:hover{background:rgba(255,255,255,.25)}
 .form-group{margin-bottom:1.2rem;text-align:left}
-.form-group label{
-  display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-  font-weight:900;color:var(--navy);margin-bottom:.45rem;
-}
-.form-group input,.form-group select{
-  width:100%;padding:.75rem 1rem;
-  border:1px solid var(--line);border-radius:8px;
-  font:inherit;font-size:.95rem;color:var(--ink);
-  background:white;outline:none;
-  transition:border-color .2s;
-}
+.form-group label{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:var(--navy);margin-bottom:.45rem;}
+.form-group input,.form-group select{width:100%;padding:.75rem 1rem;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:.95rem;color:var(--ink);background:white;outline:none;transition:border-color .2s;}
 .form-group input:focus,.form-group select:focus{border-color:var(--navy)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-divider{
-  border:none;border-top:1px solid var(--line);
-  margin:1.4rem 0;
-}
-.form-section-title{
-  font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;
-  font-weight:900;color:var(--green);margin-bottom:1rem;display:block;
-}
+.form-divider{border:none;border-top:1px solid var(--line);margin:1.4rem 0;}
+.form-section-title{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:900;color:var(--green);margin-bottom:1rem;display:block;}
 .radio-group{display:flex;flex-direction:column;gap:.65rem}
-.radio-label{
-  display:flex;align-items:center;gap:.75rem;
-  padding:.85rem 1rem;border:1px solid var(--line);border-radius:8px;
-  cursor:pointer;transition:border-color .2s,background .2s;
-  font-size:.92rem;color:var(--ink);background:white;text-align:left;
-}
+.radio-label{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border:1px solid var(--line);border-radius:8px;cursor:pointer;transition:border-color .2s,background .2s;font-size:.92rem;color:var(--ink);background:white;text-align:left;}
 .radio-label:hover{border-color:var(--navy);background:var(--off)}
 .radio-label input[type=radio]{accent-color:var(--navy);width:16px;height:16px;flex-shrink:0}
 .radio-label.selected{border-color:var(--navy);background:rgba(18,56,93,.05)}
 .radio-label .radio-price{margin-left:auto;font-family:'Playfair Display',serif;color:var(--navy);font-weight:900;font-size:1.05rem}
-.pix-box{
-  background:var(--navy);border-radius:8px;padding:1.2rem 1.4rem;
-  margin:1rem 0;text-align:center;
-}
+.pix-box{background:var(--navy);border-radius:8px;padding:1.2rem 1.4rem;margin:1rem 0;text-align:center;}
 .pix-box p{color:rgba(255,255,255,.72);font-size:.82rem;margin-bottom:.4rem}
 .pix-box strong{color:var(--gold);font-family:monospace;font-size:1.15rem;letter-spacing:.05em}
-.form-notice{
-  background:#fff7df;border:1px solid #efd28a;border-radius:8px;
-  padding:1rem 1.2rem;font-size:.85rem;color:#6a4a00;
-  margin-top:1.2rem;line-height:1.6;text-align:left;
-}
+.form-notice{background:#fff7df;border:1px solid #efd28a;border-radius:8px;padding:1rem 1.2rem;font-size:.85rem;color:#6a4a00;margin-top:1.2rem;line-height:1.6;text-align:left;}
 .form-notice strong{color:#5a3a00}
-.btn-submit{
-  width:100%;padding:1rem;margin-top:1.4rem;
-  background:var(--gold);color:var(--navy);
-  border:none;border-radius:999px;
-  font:inherit;font-weight:900;font-size:1rem;
-  cursor:pointer;letter-spacing:.04em;
-  transition:opacity .2s;
-}
+.btn-submit{width:100%;padding:1rem;margin-top:1.4rem;background:var(--gold);color:var(--navy);border:none;border-radius:999px;font:inherit;font-weight:900;font-size:1rem;cursor:pointer;letter-spacing:.04em;transition:opacity .2s;}
 .btn-submit:hover{opacity:.88}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;}
 .price-card{cursor:pointer;transition:box-shadow .2s,transform .2s}
 .price-card:hover{box-shadow:0 12px 40px rgba(18,56,93,.18);transform:translateY(-3px)}
-.price-card::after{
-  content:"Clique para se inscrever →";
-  display:block;margin-top:1.2rem;
-  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  font-weight:900;color:var(--green);
+.price-card::after{content:"Clique para se inscrever →";display:block;margin-top:1.2rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:var(--green);}
+/* Toast de feedback */
+.toast{
+  position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(120px);
+  z-index:200;border-radius:12px;padding:1rem 1.6rem;
+  font-size:.95rem;font-weight:700;text-align:center;
+  box-shadow:0 8px 32px rgba(0,0,0,.18);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+  pointer-events:none;min-width:280px;
 }
+.toast.show{transform:translateX(-50%) translateY(0);}
+.toast.success{background:var(--green);color:white;}
+.toast.error{background:var(--coral);color:white;}
 @media(max-width:560px){
   .form-row{grid-template-columns:1fr}
   .modal-body{padding:1.4rem}
 }
-
 @media(max-width:860px){
   nav{height:64px}.nav-links{display:none}.nav-logo img{height:42px}
   .hero{grid-template-columns:1fr;padding-top:64px}.hero-copy{padding:3rem 1.35rem}.hero-media{min-height:55vw}
@@ -667,7 +345,6 @@ dance (sapateado americano)</p>
   </div>
 </header>
 
-<!-- Substitua apenas a <section id="sobre"> -->
 <section id="sobre">
   <div class="wrap">
     <p class="section-label">Festival</p>
@@ -677,35 +354,20 @@ dance (sapateado americano)</p>
     <p style="color:var(--muted);font-size:1rem;line-height:1.78;max-width:860px;margin-bottom:1rem">Além disso, o evento se destaca pela inclusão, oferecendo uma parte da programação 100% gratuita como bate papo, tap jam e programações. Serão garantidas vagas para pessoas de diferentes origens, incluindo pretos, pardos, indígenas e alunos de escolas públicas. O festival conta com medidas de acessibilidade, promovendo um ambiente mais inclusivo e acessível. Na 24ª edição conta com convidados nacionais e internacionais e uma intensa programação, para o público em geral.</p>
     <p style="color:var(--muted);font-size:1rem;line-height:1.78;max-width:860px;margin-bottom:1rem">Bolsas de estudos para festivais, bem como programas nacionais e internacionais serão contempladas para os participantes!</p>
     <p style="color:var(--muted);font-size:1rem;line-height:1.78;max-width:860px;margin-bottom:2.4rem">Uma das grandes atrações do evento é o sapateador <strong style="color:var(--navy)">Dewitt Fleming Jr.</strong>, de Nova York, que recentemente fez o musical da Broadway de grande sucesso "A Wonderful World".</p>
-
     <div style="border-radius:8px;overflow:hidden;box-shadow:0 22px 60px rgba(18,56,93,.18)">
       <img src="assets/dewitt-stage.jpg" alt="Dewitt Fleming Jr. em cena" style="width:100%;height:auto;display:block;">
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     NOVA SEÇÃO: OS ARTISTAS
-══════════════════════════════════════════ -->
 <section class="artistas-section">
   <div class="wrap">
     <p class="section-label">Os artistas</p>
     <h2>Uma edição de <em>encontros</em> e transformações</h2>
     <div class="divider"></div>
-
     <div class="artistas-lead">
-      <p>O festival conta com a presença de Jim Hamilton, da Filadélfia, atualmente morando no Brasil,
-desenvolve um trabalho de tap pela dance pela lente da percussão ao lado da realizadora do festival.
-Artistas como Luísa Bresser, Edson Guiu, Thiago Stallo trarão um grande diálogo e possibilidades de
-transformação para cada individuo que participará do festival!</p>
-      <p>Todos os convidados, ministrarão workshops, além de se apresentar espetáculos e shows ao lado da
-única artista no mundo que toca sax tenor, piano e sapateia simultaneamente, Chris Matallo.
-Aclamada de Carmen Miranda do tap dance pelo The New York Times, uma das responsáveis por
-popularizar essa arte no Brasil.</p>
-      <p>Tap dance (sapateado americano) é uma linguagem multidisciplinar de movimento e som! Dança e
-música! É música e dança simultaneamente, alegre, que libera o puro prazer de seus praticantes e
-admiradores! É uma arte para todos, sem limite de idade, físico, sendo extremamente democrática e
-transformadora para quem faz e para quem assiste!</p>
+      <p>O festival conta com a presença de Jim Hamilton, da Filadélfia, atualmente morando no Brasil, desenvolve um trabalho de tap dance pela lente da percussão ao lado da realizadora do festival. Artistas como Luísa Bresser, Edson Guiu, Thiago Stallo trarão um grande diálogo e possibilidades de transformação para cada individuo que participará do festival!</p>
+      <p>Todos os convidados ministrarão workshops, além de se apresentar em espetáculos e shows ao lado da única artista no mundo que toca sax tenor, piano e sapateia simultaneamente, Chris Matallo. Aclamada de Carmen Miranda do tap dance pelo The New York Times, uma das responsáveis por popularizar essa arte no Brasil.</p>
       <p>Tap dance (sapateado americano) é uma linguagem multidisciplinar de movimento e som — <strong>dança e música</strong> simultaneamente. Alegre, que libera o puro prazer de seus praticantes e admiradores. É uma arte para todos, sem limite de idade ou condicionamento físico, sendo extremamente <strong>democrática e transformadora</strong> para quem faz e para quem assiste.</p>
     </div>
   </div>
@@ -722,13 +384,10 @@ transformadora para quem faz e para quem assiste!</p>
 
 <section class="manifesto">
   <div class="manifesto-wrap">
-
     <div class="manifesto-visual">
       <img src="assets/dancer-stage.jpg" alt="Tap dancer em movimento">
     </div>
-
     <div class="manifesto-copy">
-
       <div>
         <p class="manifesto-headline">
           <em>Tap dance é</em>
@@ -736,13 +395,11 @@ transformadora para quem faz e para quem assiste!</p>
         </p>
         <div class="manifesto-divider" style="margin-top:1.4rem"></div>
       </div>
-
       <div class="manifesto-quote">
         <p>"Queremos difundir o sapateado como entretenimento, envolvendo <strong>artistas</strong>, <strong>formadores de opinião</strong> e pessoas que nunca tiveram a oportunidade de ver essa arte."</p>
       </div>
-
       <div>
-        <p style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:rgba(255,255,255,.42);margin-bottom:.75rem">Para quem é</p>
+        <p style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:var(--muted);margin-bottom:.75rem">Para quem é</p>
         <div class="manifesto-tags">
           <span class="manifesto-tag green">O público</span>
           <span class="manifesto-tag">Escolas de dança</span>
@@ -750,7 +407,6 @@ transformadora para quem faz e para quem assiste!</p>
           <span class="manifesto-tag">Admiradores</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -774,7 +430,6 @@ transformadora para quem faz e para quem assiste!</p>
       <button class="tab-btn" onclick="showDay('d20',this)">20/09 · Dom</button>
       <button class="tab-btn" onclick="showDay('d21',this)">21/09 · Seg</button>
     </div>
-
     <div id="d17" class="day-panel active"></div>
     <div id="d18" class="day-panel"></div>
     <div id="d19" class="day-panel"></div>
@@ -782,7 +437,6 @@ transformadora para quem faz e para quem assiste!</p>
     <div id="d21" class="day-panel">
       <div class="item"><div class="time">20h</div><div><div class="name">Espetáculo Tap Gala <span class="badge all">Gratuito</span></div><div class="prof">Show com artistas convidados nacionais, internacionais e participantes do festival. Local a confirmar.</div></div></div>
     </div>
-
     <div class="event-grid">
       <div class="event-card"><small>17/09 · 19h30 às 21h</small><h3>Tap Jam</h3><p>Teatro do Conservatório e Faculdade Souza Lima. Rua Maria Figueiredo, 560 - Paraíso.</p></div>
       <div class="event-card"><small>18/09 · 19h às 20h</small><h3>Mostra Comentada</h3><p>Apresentação com premiações no Teatro do Conservatório e Faculdade Souza Lima.</p></div>
@@ -801,8 +455,7 @@ transformadora para quem faz e para quem assiste!</p>
 
       <article class="artist">
         <div class="artist-photo" style="height:285px;overflow:hidden">
-          <img src="assets/chris-matallo.png" alt="Chris Matallo"
-       style="width:100%;height:100%;object-fit:cover;object-position:center 10%;">
+          <img src="assets/chris-matallo.png" alt="Chris Matallo" style="width:100%;height:100%;object-fit:cover;object-position:center 10%;">
         </div>
         <div class="artist-body">
           <p class="origin">Brasil · Realizadora</p>
@@ -818,9 +471,7 @@ transformadora para quem faz e para quem assiste!</p>
             <p style="margin-top:.6rem">Atuou no elenco de <em>New York, New York — O Musical</em> (2011–2013), foi preparadora de tap em <em>Crazy for You</em> com Claudia Raia e Jarbas Homem de Mello, e coreografou <em>Singing in the Rain</em> em São Paulo, ganhando prêmio de melhor coreografia em 2017.</p>
             <p style="margin-top:.6rem">Em 2016 foi homenageada pela UCTT (Universidade de Arte) na Filadélfia como um dos maiores nomes do sapateado no mundo. Desenvolve desde 2018 o núcleo artístico <strong>B.r.U.s</strong> ao lado de Jim Hamilton, com turnês pelo Brasil, Américas e Europa.</p>
           </div>
-          <button class="artist-toggle" onclick="toggleBio('bio-chris',this)">
-            Ler mais <em class="arr">↓</em>
-          </button>
+          <button class="artist-toggle" onclick="toggleBio('bio-chris',this)">Ler mais <em class="arr">↓</em></button>
         </div>
       </article>
 
@@ -840,15 +491,13 @@ transformadora para quem faz e para quem assiste!</p>
             <p style="margin-top:.6rem">Recebeu o prêmio Dançarino da Década da Broadway World, o prêmio Hoofer da American Tap Dance Foundation e o NYC Flo Bert. Lecionou na NYU, Pace University, Steps on Broadway e Broadway Dance Center.</p>
             <p style="margin-top:.6rem">Fez história gravando o primeiro álbum de jazz ao vivo com sapateado no Jazz at Lincoln Center Dizzy's Club. O New York Times afirma que ele é uma fonte contínua de variedade rítmica — "faíscas parecem sair daqueles sapatos".</p>
           </div>
-          <button class="artist-toggle" onclick="toggleBio('bio-dewitt',this)">
-            Ler mais <em class="arr">↓</em>
-          </button>
+          <button class="artist-toggle" onclick="toggleBio('bio-dewitt',this)">Ler mais <em class="arr">↓</em></button>
         </div>
       </article>
 
       <article class="artist">
-        <div class="artist-photo top"><img src="assets/edson-guiu.png" alt="Edson Guiu" ></div>
-        <div class="artist-body" >
+        <div class="artist-photo top"><img src="assets/edson-guiu.png" alt="Edson Guiu"></div>
+        <div class="artist-body">
           <p class="origin">Brasil</p>
           <h3>Edson Guiu</h3>
           <div class="artist-tags">
@@ -861,9 +510,7 @@ transformadora para quem faz e para quem assiste!</p>
             <p>Coreógrafo, bailarino e DJ brasileiro, no mercado da dança desde 1997. Sob o nome artístico DJ G, atua como produtor musical e DJ em clubes e eventos em Nova York, Paris e Los Angeles.</p>
             <p style="margin-top:.6rem">Possui formação em instituições de renome mundial, incluindo o Broadway Dance Center em Nova York e o IALS em Roma. Desenvolveu metodologias próprias de ensino e oferece formação profissional e mentoria para dançarinos e empreendedores da área.</p>
           </div>
-          <button class="artist-toggle" onclick="toggleBio('bio-edson',this)">
-            Ler mais <em class="arr">↓</em>
-          </button>
+          <button class="artist-toggle" onclick="toggleBio('bio-edson',this)">Ler mais <em class="arr">↓</em></button>
         </div>
       </article>
 
@@ -879,12 +526,10 @@ transformadora para quem faz e para quem assiste!</p>
           </div>
           <p class="artist-bio-short" style="margin-top:.65rem">Musicista, percussionista e diretor da bateria/cuícas da Agremiação Nenê da Vila Matilde. Atuante no carnaval desde 1998.</p>
           <div class="artist-bio-full" id="bio-thiago">
-            <p>Ritmista e músico desde 2011, com forte atuação no universo das baterias das escolas de samba. Diretor da ala de cuíca, destaca-se pela dedicação ao ritmo e pelo compromisso com a tradição do samba. Também atua como arranjador, contribuindo para o desenvolvimento musical e a construção de levadas que fortalecem a identidade sonora das baterias.</p>
+            <p>Ritmista e músico desde 2011, com forte atuação no universo das baterias das escolas de samba. Diretor da ala de cuíca, destaca-se pela dedicação ao ritmo e pelo compromisso com a tradição do samba.</p>
             <p style="margin-top:.6rem">Atualmente desenvolve um projeto com Chris Matallo e Jim Hamilton no Conservatório e Faculdade Souza Lima em SP, onde une percussão de escola de samba e tap dance em uma linguagem única.</p>
           </div>
-          <button class="artist-toggle" onclick="toggleBio('bio-thiago',this)">
-            Ler mais <em class="arr">↓</em>
-          </button>
+          <button class="artist-toggle" onclick="toggleBio('bio-thiago',this)">Ler mais <em class="arr">↓</em></button>
         </div>
       </article>
 
@@ -900,19 +545,16 @@ transformadora para quem faz e para quem assiste!</p>
           </div>
           <p class="artist-bio-short" style="margin-top:.65rem">Multiartista, atriz, cantora, tap dancer e influenciadora. Ganhou projeção nacional como Helena Rogatto em <em>Poliana Moça</em> (SBT).</p>
           <div class="artist-bio-full" id="bio-luisa">
-            <p>Destaque em grandes produções como <em>Escola do Rock</em>, <em>Charlie e a Fantástica Fábrica de Chocolate</em>, <em>Wicked</em> (Nessarose Thropp) e <em>Shrek — O Musical</em>. Formada na AMDA (American Musical and Dramatic Academy) em Nova York, onde recebeu o conselho que define sua trajetória: "Nunca sinta medo de experimentar".</p>
+            <p>Destaque em grandes produções como <em>Escola do Rock</em>, <em>Charlie e a Fantástica Fábrica de Chocolate</em>, <em>Wicked</em> (Nessarose Thropp) e <em>Shrek — O Musical</em>. Formada na AMDA (American Musical and Dramatic Academy) em Nova York.</p>
             <p style="margin-top:.6rem">Atualmente cursa Cinema na FAAP e foi convidada para o Globo de Ouro. Utiliza suas redes sociais para desmistificar o mercado artístico e incentivar novas gerações de artistas.</p>
           </div>
-          <button class="artist-toggle" onclick="toggleBio('bio-luisa',this)">
-            Ler mais <em class="arr">↓</em>
-          </button>
+          <button class="artist-toggle" onclick="toggleBio('bio-luisa',this)">Ler mais <em class="arr">↓</em></button>
         </div>
       </article>
 
       <article class="artist">
         <div class="artist-photo">
-  <img src="assets/jim-hamilton.jpeg" alt="Jim Hamilton em performance"
-       style="object-position:center 15%;">
+          <img src="assets/jim-hamilton.jpeg" alt="Jim Hamilton em performance" style="object-position:center 15%;">
         </div>
         <div class="artist-body">
           <p class="origin">Filadélfia · EUA</p>
@@ -925,11 +567,9 @@ transformadora para quem faz e para quem assiste!</p>
           <p class="artist-bio-short" style="margin-top:.65rem">Percussionista e artista performático nascido na Filadélfia, atualmente no Brasil. Pesquisa som, corpo e cultura brasileira ao lado de Chris Matallo no núcleo B.r.U.s.</p>
           <div class="artist-bio-full" id="bio-jim">
             <p>Cresceu em um estúdio de dança na Filadélfia com pais professores de tap. Aos 12 anos iniciou na bateria e percussão. Fundou a gravadora Tension Rod e em 2014 criou o Rittenhouse Recording Studio. Tocou no Montreal Jazz Festival (2002) e no Grammy Awards com Boyz II Men (1992–1997).</p>
-            <p style="margin-top:.6rem">Em 2024 se apresentou no Festival de Dança de Joinville, Festival de Ponta Grossa, Festival Internacional de Goiás e na 4ª Residência da São Paulo Escola de Dança com o espetáculo "Escuta-me". Desde setembro de 2024 ministra aulas no Conservatório Musical Souza Lima ao lado de Chris Matallo.</p>
+            <p style="margin-top:.6rem">Em 2024 se apresentou no Festival de Dança de Joinville, Festival de Ponta Grossa, Festival Internacional de Goiás e na 4ª Residência da São Paulo Escola de Dança. Desde setembro de 2024 ministra aulas no Conservatório Musical Souza Lima ao lado de Chris Matallo.</p>
           </div>
-          <button class="artist-toggle" onclick="toggleBio('bio-jim',this)">
-            Ler mais <em class="arr">↓</em>
-          </button>
+          <button class="artist-toggle" onclick="toggleBio('bio-jim',this)">Ler mais <em class="arr">↓</em></button>
         </div>
       </article>
 
@@ -949,7 +589,6 @@ transformadora para quem faz e para quem assiste!</p>
   </div>
 </section>
 
-<!-- Substitua a <section id="inscricoes" class="pricing"> completa -->
 <section id="inscricoes" class="pricing">
   <div class="wrap">
     <p class="section-label">Inscrições</p>
@@ -958,8 +597,6 @@ transformadora para quem faz e para quem assiste!</p>
     <p class="pricing-note">Programações de 17 a 20 de setembro, com opções para 4 dias ou 2 dias. Valores promocionais do 1º lote válidos até 30 de junho; a partir de 1º de julho os valores serão alterados.</p>
 
     <div class="pricing-grid">
-
-      <!-- BÁSICA E INFANTIL -->
       <article class="price-card">
         <p class="level">Programação</p>
         <h3>Básica e Infantil</h3>
@@ -970,19 +607,10 @@ transformadora para quem faz e para quem assiste!</p>
           <li><span style="color:var(--navy);font-weight:700">13h40–14h40</span> Teatro Musical aplicado ao tap dancer — Luísa Bresser</li>
           <li><span style="color:var(--navy);font-weight:700">17h–18h</span> Bateria de escola de samba com os pés — Thiago Stallo</li>
         </ul>
-        <div class="price-box">
-          <small>1º Lote · 4 dias · até 30/06</small>
-          <p class="amount">R$500 <span>à vista</span></p>
-          <p class="install">ou 3 parcelas de R$200</p>
-        </div>
-        <div class="price-box two">
-          <small>1º Lote · 2 dias · até 30/06</small>
-          <p class="amount">R$300 <span>à vista</span></p>
-          <p class="install">ou 3 parcelas de R$150</p>
-        </div>
+        <div class="price-box"><small>1º Lote · 4 dias · até 30/06</small><p class="amount">R$500 <span>à vista</span></p><p class="install">ou 3 parcelas de R$200</p></div>
+        <div class="price-box two"><small>1º Lote · 2 dias · até 30/06</small><p class="amount">R$300 <span>à vista</span></p><p class="install">ou 3 parcelas de R$150</p></div>
       </article>
 
-      <!-- INTERMEDIÁRIA -->
       <article class="price-card featured">
         <span class="popular">Mais procurado</span>
         <p class="level">Programação</p>
@@ -995,19 +623,10 @@ transformadora para quem faz e para quem assiste!</p>
           <li><span style="color:var(--navy);font-weight:700">14h50–15h50</span> Agilidade e limpeza de sons — Chris Matallo e Jim Hamilton</li>
           <li><span style="color:var(--navy);font-weight:700">17h–18h</span> Bateria de escola de samba com os pés — Thiago Stallo</li>
         </ul>
-        <div class="price-box">
-          <small>1º Lote · 4 dias · até 30/06</small>
-          <p class="amount">R$800 <span>à vista</span></p>
-          <p class="install">ou 3 parcelas de R$300</p>
-        </div>
-        <div class="price-box two">
-          <small>1º Lote · 2 dias · até 30/06</small>
-          <p class="amount">R$500 <span>à vista</span></p>
-          <p class="install">ou 3 parcelas de R$200</p>
-        </div>
+        <div class="price-box"><small>1º Lote · 4 dias · até 30/06</small><p class="amount">R$800 <span>à vista</span></p><p class="install">ou 3 parcelas de R$300</p></div>
+        <div class="price-box two"><small>1º Lote · 2 dias · até 30/06</small><p class="amount">R$500 <span>à vista</span></p><p class="install">ou 3 parcelas de R$200</p></div>
       </article>
 
-      <!-- AVANÇADA -->
       <article class="price-card">
         <p class="level">Programação</p>
         <h3>Avançada</h3>
@@ -1019,21 +638,12 @@ transformadora para quem faz e para quem assiste!</p>
           <li><span style="color:var(--navy);font-weight:700">15h55–16h55</span> Técnica avançada — Dewitt Fleming Jr.</li>
           <li><span style="color:var(--navy);font-weight:700">17h–18h</span> Bateria de escola de samba com os pés — Thiago Stallo</li>
         </ul>
-        <div class="price-box">
-          <small>1º Lote · 4 dias · até 30/06</small>
-          <p class="amount">R$900 <span>à vista</span></p>
-          <p class="install">ou 3 parcelas de R$335</p>
-        </div>
-        <div class="price-box two">
-          <small>1º Lote · 2 dias · até 30/06</small>
-          <p class="amount">R$500 <span>à vista</span></p>
-          <p class="install">ou 3 parcelas de R$200</p>
-        </div>
+        <div class="price-box"><small>1º Lote · 4 dias · até 30/06</small><p class="amount">R$900 <span>à vista</span></p><p class="install">ou 3 parcelas de R$335</p></div>
+        <div class="price-box two"><small>1º Lote · 2 dias · até 30/06</small><p class="amount">R$500 <span>à vista</span></p><p class="install">ou 3 parcelas de R$200</p></div>
       </article>
-
     </div>
 
-    <div class="deadline">⚠️ Valores do 1º lote válidos até 30 de junho. A partir de 1º de julho os valores serão alterados. Pagamentos via PIX. Envie a ficha de inscrição e o comprovante para o e-mail do festival.</div>
+    <div class="deadline">⚠️ Valores do 1º lote válidos até 30 de junho. A partir de 1º de julho os valores serão alterados. Pagamentos via PIX.</div>
 
     <div class="payment">
       <h3>Ficha de inscrição para workshops</h3>
@@ -1041,20 +651,21 @@ transformadora para quem faz e para quem assiste!</p>
       <div class="pix">11931516933</div>
       <p>E-mail: <a href="mailto:contatochrismatallo@gmail.com">contatochrismatallo@gmail.com</a></p>
     </div>
-    <!-- PATROCINADORES -->
+
     <p class="section-label" style="margin-top:3.5rem">Patrocínio</p>
     <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:3rem;margin-top:1.6rem">
-      <img src="assets/so-danca.png"    alt="Só Dança" style="height:96px;width:auto;object-fit:contain;mix-blend-mode:multiply">
-      <img src="assets/trinys-logo.png" alt="Trinys"   style="height:96px;width:auto;object-fit:contain;mix-blend-mode:multiply">
+      <img src="assets/so-danca.png" alt="Só Dança" style="height:96px;width:auto;object-fit:contain;mix-blend-mode:multiply">
+      <img src="assets/trinys-logo.png" alt="Trinys" style="height:96px;width:auto;object-fit:contain;mix-blend-mode:multiply">
     </div>
     <p style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:var(--muted);margin-top:2.4rem;margin-bottom:1rem">Apoio</p>
     <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2.5rem">
-      <img src="assets/souza-logo.png"    alt="Souza Lima" style="height:48px;width:auto;object-fit:contain;mix-blend-mode:multiply;opacity:.75">
-      <img src="assets/reactive-logo.png" alt="Reactive"   style="height:48px;width:auto;object-fit:contain;mix-blend-mode:multiply;opacity:.75">
+      <img src="assets/souza-logo.png" alt="Souza Lima" style="height:48px;width:auto;object-fit:contain;mix-blend-mode:multiply;opacity:.75">
+      <img src="assets/reactive-logo.png" alt="Reactive" style="height:48px;width:auto;object-fit:contain;mix-blend-mode:multiply;opacity:.75">
     </div>
   </div>
 </section>
 
+<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal" role="dialog" aria-modal="true">
     <div class="modal-header" style="position:relative">
@@ -1063,8 +674,6 @@ transformadora para quem faz e para quem assiste!</p>
       <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
     </div>
     <div class="modal-body">
-
-      <!-- DADOS PESSOAIS -->
       <span class="form-section-title">Dados pessoais</span>
       <div class="form-group">
         <label>Nome completo</label>
@@ -1097,7 +706,6 @@ transformadora para quem faz e para quem assiste!</p>
 
       <hr class="form-divider">
 
-      <!-- PROGRAMA -->
       <span class="form-section-title">Escolha seu programa</span>
       <div class="radio-group" id="programaGroup">
         <label class="radio-label" onclick="selectRadio(this)">
@@ -1119,7 +727,6 @@ transformadora para quem faz e para quem assiste!</p>
 
       <hr class="form-divider">
 
-      <!-- DURAÇÃO -->
       <span class="form-section-title">Duração</span>
       <div class="radio-group">
         <label class="radio-label" onclick="selectRadio(this)">
@@ -1134,7 +741,6 @@ transformadora para quem faz e para quem assiste!</p>
 
       <hr class="form-divider">
 
-      <!-- PAGAMENTO -->
       <span class="form-section-title">Forma de pagamento</span>
       <div class="radio-group">
         <label class="radio-label" onclick="selectRadio(this)">
@@ -1153,17 +759,17 @@ transformadora para quem faz e para quem assiste!</p>
       </div>
 
       <div class="form-notice">
-        Após o pagamento, envie o <strong>comprovante do PIX</strong> junto com este formulário preenchido para:<br>
-        <strong>contatochrismatallo@gmail.com</strong><br><br>
-        ⚠️ Valores do 1º lote válidos até <strong>30 de junho</strong>. A partir de 1º de julho os valores serão alterados.
+        ⚠️ Após preencher e enviar este formulário, realize o pagamento via PIX para a chave acima e aguarde a confirmação da sua inscrição por e-mail.<br><br>
+        Valores do 1º lote válidos até <strong>30 de junho</strong>. A partir de 1º de julho os valores serão alterados.
       </div>
 
-      <button class="btn-submit" onclick="submitForm()">Enviar inscrição por e-mail</button>
-
+      <button class="btn-submit" id="btnSubmit" onclick="submitForm()">Enviar inscrição</button>
     </div>
   </div>
 </div>
 
+<!-- Toast de feedback -->
+<div class="toast" id="toast"></div>
 
 <footer>
   <img src="assets/logo-brasil-tap-festival.png" alt="Brasil International Tap Festival">
@@ -1176,7 +782,7 @@ transformadora para quem faz e para quem assiste!</p>
 const workshopDays = {
   d17: [
     ['9h às 10h','Tap e diversão!','Básico e infantil','basic','Prof. Chris Matallo'],
-    ['10h10 às 11h10','House aplicado ao tap dance','Todos os níveis','all','Prof. Edson Guiu'],
+    ['10h1a0 às 11h10','House aplicado ao tap dance','Todos os níveis','all','Prof. Edson Guiu'],
     ['11h20 às 12h20','Técnica, corpo e produção de som','Avançado','adv','Prof. Chris Matallo e Jim Hamilton'],
     ['12h30 às 13h30','Técnica e grooves','Intermediário','inter','Prof. Dewitt Fleming Jr.'],
     ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Luísa Bresser'],
@@ -1225,8 +831,8 @@ Object.entries(workshopDays).forEach(([id, rows]) => {
 });
 
 function showDay(id, btn){
-  document.querySelectorAll('.day-panel').forEach(panel => panel.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
@@ -1240,9 +846,7 @@ function toggleBio(id, btn) {
     ? 'Ler menos <em class="arr" style="display:inline-block;transform:rotate(180deg)">↓</em>'
     : 'Ler mais <em class="arr">↓</em>';
 }
-</script>
 
-<script>
 const programaPresets = {
   basico:        { titulo:'Básica e Infantil', preco4:'R$500', preco2:'R$300' },
   intermediario: { titulo:'Intermediária',     preco4:'R$800', preco2:'R$500' },
@@ -1255,14 +859,11 @@ function openModal(programa) {
   document.getElementById('priceBasico').textContent = programaPresets.basico.preco4;
   document.getElementById('priceInter').textContent  = programaPresets.intermediario.preco4;
   document.getElementById('priceAvanc').textContent  = programaPresets.avancado.preco4;
-
-  // pré-seleciona o programa clicado
   document.querySelectorAll('#programaGroup .radio-label').forEach(l => {
     l.classList.remove('selected');
     const radio = l.querySelector('input');
     if(radio.value === programa){ radio.checked = true; l.classList.add('selected'); }
   });
-
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -1284,6 +885,14 @@ function selectRadio(label) {
   label.classList.add('selected');
 }
 
+function showToast(msg, tipo) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast ' + tipo;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4500);
+}
+
 function submitForm() {
   const nome      = document.getElementById('f_nome').value.trim();
   const endereco  = document.getElementById('f_endereco').value.trim();
@@ -1291,40 +900,58 @@ function submitForm() {
   const nasc      = document.getElementById('f_nascimento').value;
   const tel       = document.getElementById('f_telefone').value.trim();
   const email     = document.getElementById('f_email').value.trim();
-  const programa  = document.querySelector('input[name="programa"]:checked')?.value  || '—';
-  const duracao   = document.querySelector('input[name="duracao"]:checked')?.value   || '—';
-  const pagamento = document.querySelector('input[name="pagamento"]:checked')?.value || '—';
+  const programa  = document.querySelector('input[name="programa"]:checked')?.value  || '';
+  const duracao   = document.querySelector('input[name="duracao"]:checked')?.value   || '';
+  const pagamento = document.querySelector('input[name="pagamento"]:checked')?.value || '';
+
+  // Validação básica
+  if(!nome || !endereco || !cpf || !nasc || !tel || !email) {
+    showToast('⚠️ Preencha todos os campos pessoais.', 'error'); return;
+  }
+  if(!programa) { showToast('⚠️ Escolha um programa.', 'error'); return; }
+  if(!duracao)  { showToast('⚠️ Escolha a duração.', 'error'); return; }
+  if(!pagamento){ showToast('⚠️ Escolha a forma de pagamento.', 'error'); return; }
 
   const labels = {
     basico:'Básico e Infantil', intermediario:'Intermediário', avancado:'Avançado',
-    '4dias':'4 dias','2dias':'2 dias',
+    '4dias':'4 dias (17 a 20/09)','2dias':'2 dias (à sua escolha)',
     pix_avista:'PIX à vista', pix_parcelado:'PIX parcelado (3x)'
   };
 
-  const corpo = `Ficha de Inscrição — Brasil International Tap Festival 2026
+  const btn = document.getElementById('btnSubmit');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
 
-Nome: ${nome}
-Endereço: ${endereco}
-CPF: ${cpf}
-Data de Nascimento: ${nasc}
-Telefone: ${tel}
-E-mail: ${email}
-
-Programa: ${labels[programa] || programa}
-Duração: ${labels[duracao] || duracao}
-Pagamento: ${labels[pagamento] || pagamento}
-
-Chave PIX: 11 93151-6933
-Envie este formulário + comprovante do PIX para: contatochrismatallo@gmail.com`;
-
-  const mailtoLink = `mailto:contatochrismatallo@gmail.com`
-    + `?subject=${encodeURIComponent('Inscrição Workshop — ' + (labels[programa] || programa))}`
-    + `&body=${encodeURIComponent(corpo)}`;
-
-  window.location.href = mailtoLink;
+  emailjs.send('service_tb0yik5', 'template_5mmmrib', {
+    nome:      nome,
+    endereco:  endereco,
+    cpf:       cpf,
+    nascimento: nasc,
+    telefone:  tel,
+    email:     email,
+    programa:  labels[programa],
+    duracao:   labels[duracao],
+    pagamento: labels[pagamento]
+  })
+  .then(() => {
+    showToast('✅ Inscrição enviada com sucesso! Em breve entraremos em contato.', 'success');
+    closeModal();
+    // Limpa o formulário
+    ['f_nome','f_endereco','f_cpf','f_nascimento','f_telefone','f_email'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.querySelectorAll('.radio-label').forEach(l => l.classList.remove('selected'));
+    document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  })
+  .catch(() => {
+    showToast('❌ Erro ao enviar. Tente novamente ou contate contatochrismatallo@gmail.com', 'error');
+  })
+  .finally(() => {
+    btn.disabled = false;
+    btn.textContent = 'Enviar inscrição';
+  });
 }
 
-// Torna os cards clicáveis — adicione onclick em cada .price-card no HTML
 document.querySelectorAll('.price-card').forEach(card => {
   const h3 = card.querySelector('h3');
   if(!h3) return;
