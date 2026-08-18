@@ -570,6 +570,27 @@ dance (sapateado americano)</p>
       </article>
 
       <article class="artist">
+        <div class="artist-photo top"><img src="assets/rafael-dantas.jpg" alt="Rafael Dantas" style="object-position:center 12%;"></div>
+        <div class="artist-body">
+          <p class="origin">Brasil · Diretor Musical</p>
+          <h3>Rafael Dantas</h3>
+          <div class="artist-tags">
+            <span class="artist-tag">Técnica Vocal</span>
+            <span class="artist-tag">Direção Musical</span>
+            <span class="artist-tag">Broadway</span>
+          </div>
+          <p class="artist-bio-short" style="margin-top:.65rem">Professor de Técnica Vocal, ator, compositor infantil e diretor musical com quase 30 anos de carreira. Foi Diretor Musical da montagem oficial da Broadway do musical Thirteen.</p>
+          <div class="artist-bio-full" id="bio-rafael">
+            <p>Começou a estudar canto na infância e, aos 16 anos, já regia corais. Atuou na Walt Disney World (1999–2000) e, desde 2001, leciona no Conservatório Souza Lima, onde também dirigiu espetáculos acadêmicos.</p>
+            <p style="margin-top:.6rem">Participou de montagens profissionais como <em>O Inspetor Geral</em>, <em>Casa de Bonecas</em> e <em>Nas Alturas — O Musical</em> (In The Heights Brasil), além de dirigir musicalmente peças premiadas. Foi coordenador da 4act Performing Arts, produtor no FAMA (2004) e jurado do Canta Comigo (Record) até 2023.</p>
+            <p style="margin-top:.6rem">Entre 2016 e 2024, assinou a direção musical de espetáculos acadêmicos como <em>A Bela e a Fera</em>, <em>Aladdin</em> e <em>O Rei Leão</em>. Estudou em Orlando e Nova York, além de cursar Formação em Canto e Harmonização de Vozes no Centro Científico da Voz.</p>
+            <p style="margin-top:.6rem">Em seu trabalho mais recente, foi Diretor Musical da montagem oficial da Broadway do musical <em>Thirteen</em> — o mesmo que lançou Ariana Grande nos EUA. Atualmente assina a Direção Musical da montagem acadêmica de <em>Shrek — O Musical</em> na IAD Lina Penteado, em Campinas.</p>
+          </div>
+          <button class="artist-toggle" onclick="toggleBio('bio-rafael',this)">Ler mais <em class="arr">↓</em></button>
+        </div>
+      </article>
+
+      <article class="artist">
         <div class="artist-photo">
           <img src="assets/jim-hamilton.jpeg" alt="Jim Hamilton em performance" style="object-position:center 15%;">
         </div>
@@ -622,7 +643,7 @@ dance (sapateado americano)</p>
         <ul>
           <li><span style="color:var(--navy);font-weight:700">9h–10h</span> Tap e diversão! — Chris Matallo (dia 17), Dewitt Fleming Jr. (dia 18), ambos (dia 19)</li>
           <li><span style="color:var(--navy);font-weight:700">10h10–11h10</span> Bateria de escola de samba com os pés — Zeca do Cavaco (dias 17, 18 e 19)</li>
-          <li><span style="color:var(--navy);font-weight:700">13h40–14h40</span> Teatro Musical aplicado ao tap dancer — Luísa Bresser</li>
+          <li><span style="color:var(--navy);font-weight:700">13h40–14h40</span> Teatro Musical aplicado ao tap dancer — Rafael Dantas</li>
           <li><span style="color:var(--navy);font-weight:700">17h–18h</span> House aplicado ao tap dance — Edson Guiu</li>
         </ul>
         <div class="price-box"><small>2º Lote · 4 dias</small><p class="amount">R$600 <span>à vista</span></p><p class="install">ou 3 parcelas de R$200</p></div>
@@ -638,7 +659,7 @@ dance (sapateado americano)</p>
         <ul>
           <li><span style="color:var(--navy);font-weight:700">10h10–11h10</span> Bateria de escola de samba com os pés — Zeca do Cavaco (dias 17, 18 e 19)</li>
           <li><span style="color:var(--navy);font-weight:700">12h30–13h30</span> Técnica e grooves — Dewitt Fleming Jr.</li>
-          <li><span style="color:var(--navy);font-weight:700">13h40–14h40</span> Teatro Musical aplicado ao tap dancer — Luísa Bresser</li>
+          <li><span style="color:var(--navy);font-weight:700">13h40–14h40</span> Teatro Musical aplicado ao tap dancer — Rafael Dantas</li>
           <li><span style="color:var(--navy);font-weight:700">14h50–15h50</span> Agilidade e limpeza de sons — Chris Matallo e Jim Hamilton</li>
           <li><span style="color:var(--navy);font-weight:700">17h–18h</span> House aplicado ao tap dance — Edson Guiu</li>
         </ul>
@@ -654,7 +675,7 @@ dance (sapateado americano)</p>
         <ul>
           <li><span style="color:var(--navy);font-weight:700">10h10–11h10</span> Bateria de escola de samba com os pés — Zeca do Cavaco (dias 17, 18 e 19)</li>
           <li><span style="color:var(--navy);font-weight:700">11h20–12h20</span> Técnica, corpo e produção de som — Chris Matallo e Jim Hamilton</li>
-          <li><span style="color:var(--navy);font-weight:700">13h40–14h40</span> Teatro Musical aplicado ao tap dancer — Luísa Bresser</li>
+          <li><span style="color:var(--navy);font-weight:700">13h40–14h40</span> Teatro Musical aplicado ao tap dancer — Rafael Dantas</li>
           <li><span style="color:var(--navy);font-weight:700">15h55–16h55</span> Técnica avançada — Dewitt Fleming Jr.</li>
           <li><span style="color:var(--navy);font-weight:700">17h–18h</span> House aplicado ao tap dance — Edson Guiu</li>
         </ul>
@@ -806,7 +827,7 @@ const workshopDays = {
     ['10h10 às 11h10','Bateria de escola de samba com os pés','Todos os níveis','all','Prof. Zeca do Cavaco'],
     ['11h20 às 12h20','Técnica, corpo e produção de som','Avançado','adv','Prof. Chris Matallo e Jim Hamilton'],
     ['12h30 às 13h30','Técnica e grooves','Intermediário','inter','Prof. Dewitt Fleming Jr.'],
-    ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Luísa Bresser'],
+    ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Rafael Dantas'],
     ['14h50 às 15h50','Agilidade e limpeza de sons','Intermediário','inter','Prof. Chris Matallo e Jim Hamilton'],
     ['15h55 às 16h55','Técnica','Avançado','adv','Prof. Dewitt Fleming Jr.'],
     ['17h às 18h','House aplicado ao tap dance','Todos os níveis','all','Prof. Edson Guiu']
@@ -816,7 +837,7 @@ const workshopDays = {
     ['10h10 às 11h10','Bateria de escola de samba com os pés','Todos os níveis','all','Prof. Zeca do Cavaco'],
     ['11h20 às 12h20','Técnica, corpo e produção de som','Avançado','adv','Prof. Chris Matallo e Jim Hamilton'],
     ['12h30 às 13h30','Técnica e grooves','Intermediário','inter','Prof. Dewitt Fleming Jr.'],
-    ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Luísa Bresser'],
+    ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Rafael Dantas'],
     ['14h50 às 15h50','Agilidade e limpeza de sons','Intermediário','inter','Prof. Chris Matallo e Jim Hamilton'],
     ['15h55 às 16h55','Técnica','Avançado','adv','Prof. Dewitt Fleming Jr.'],
     ['17h às 18h','House aplicado ao tap dance','Todos os níveis','all','Prof. Edson Guiu']
@@ -826,7 +847,7 @@ const workshopDays = {
     ['10h10 às 11h10','Bateria de escola de samba com os pés','Todos os níveis','all','Prof. Zeca do Cavaco'],
     ['11h20 às 12h20','Técnica, corpo e produção de som','Avançado','adv','Prof. Chris Matallo e Jim Hamilton'],
     ['12h30 às 13h30','Técnica e grooves','Intermediário','inter','Prof. Dewitt Fleming Jr.'],
-    ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Luísa Bresser'],
+    ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Rafael Dantas'],
     ['14h50 às 15h50','Agilidade e limpeza de sons','Intermediário','inter','Prof. Chris Matallo e Jim Hamilton'],
     ['15h55 às 16h55','Técnica','Avançado','adv','Prof. Dewitt Fleming Jr.'],
     ['17h às 18h','House aplicado ao tap dance','Todos os níveis','all','Prof. Edson Guiu']
@@ -834,7 +855,7 @@ const workshopDays = {
   d20: [
     ['11h20 às 12h20','Técnica, corpo e produção de som','Avançado','adv','Prof. Chris Matallo e Jim Hamilton'],
     ['12h30 às 13h30','Técnica e grooves','Intermediário','inter','Prof. Dewitt Fleming Jr.'],
-    ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Luísa Bresser'],
+    ['13h40 às 14h40','Teatro musical aplicado ao tap dancer','Todos os níveis','all','Prof. Rafael Dantas'],
     ['14h50 às 15h50','Agilidade e limpeza de sons','Intermediário','inter','Prof. Chris Matallo e Jim Hamilton'],
     ['15h55 às 16h55','Técnica','Avançado','adv','Prof. Dewitt Fleming Jr.'],
     ['17h às 18h','House aplicado ao tap dance','Todos os níveis','all','Prof. Edson Guiu']
